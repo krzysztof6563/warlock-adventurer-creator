@@ -1,0 +1,144 @@
+<template>
+    <div>
+        {{ $t('skillselect.six_points_left', { number: generatorStore.creator.sixPointsLeft }) }}
+    </div>
+    <div>
+        {{ $t('skillselect.five_points_left', { number: generatorStore.creator.fivePointsLeft }) }}
+    </div>
+
+    <div class="skills-wrap">
+        <div class="skill" v-for="(skill) in generatorStore.adventurer.initialSkills">
+            <div class="name">
+                {{ $t(`skill.${skill.name}`) }}
+            </div>
+            <div class="selector">
+                <div @click="setSkillValue(skill.name, 6)" class="cursor-pointer">
+                    <div>6</div>
+                    <button
+                        :class="{ checked: generatorStore.adventurer.getInitialSkillValue(skill.name) == 6 }"></button>
+                </div>
+                <div @click="setSkillValue(skill.name, 5)" class="cursor-pointer">
+                    <div>5</div>
+                    <button
+                        :class="{ checked: generatorStore.adventurer.getInitialSkillValue(skill.name) == 5 }"></button>
+                </div>
+
+                <div>
+                    <div>4</div>
+                    <button
+                        :class="{ 'checked': generatorStore.adventurer.getInitialSkillValue(skill.name) == 4 }"></button>
+                </div>
+            </div>
+            <div class="current">
+                {{ generatorStore.adventurer.getInitialSkillValue(skill.name) }}
+            </div>
+        </div>
+    </div>
+</template>
+
+<script setup>
+import { useGeneratorStore } from '@/stores/generator';
+import { watch } from 'vue';
+
+const generatorStore = useGeneratorStore();
+const adventurer = generatorStore.adventurer;
+
+const setSkillValue = (name, newValue) => {
+    let currentValue = adventurer.getInitialSkillValue(name);
+
+    if (
+        (newValue == 5 && generatorStore.creator.fivePointsLeft <= 0 && currentValue != 5) ||
+        (newValue == 6 && generatorStore.creator.sixPointsLeft <= 0 && currentValue != 6)) {
+        return;
+    }
+
+    if (currentValue == 6 && newValue == 6) {
+        generatorStore.creator.sixPointsLeft += 1;
+        adventurer.setInitialSkillValue(name, 0)
+    }
+    if (currentValue == 5 && newValue == 5) {
+        generatorStore.creator.fivePointsLeft += 1;
+        adventurer.setInitialSkillValue(name, 0)
+    }
+    if (currentValue == 0 && newValue == 6) {
+        generatorStore.creator.sixPointsLeft -= 1;
+        adventurer.setInitialSkillValue(name, newValue)
+    }
+    if (currentValue == 0 && newValue == 5) {
+        generatorStore.creator.fivePointsLeft -= 1;
+        adventurer.setInitialSkillValue(name, newValue)
+    }
+    if (currentValue == 5 && newValue == 6) {
+        generatorStore.creator.fivePointsLeft += 1;
+        generatorStore.creator.sixPointsLeft -= 1;
+        adventurer.setInitialSkillValue(name, newValue)
+    }
+    if (currentValue == 6 && newValue == 5) {
+        generatorStore.creator.sixPointsLeft += 1;
+        generatorStore.creator.fivePointsLeft -= 1;
+        adventurer.setInitialSkillValue(name, newValue)
+    }
+}
+
+watch(
+    () => ({
+        fivePointsLeft: generatorStore.creator.fivePointsLeft,
+        sixPointsLeft: generatorStore.creator.sixPointsLeft
+    }),
+    (newValue) => {
+        if (adventurer.profession) {
+            adventurer.setSkillsBasedOnProfession(adventurer.profession)
+        }
+        if (newValue.fivePointsLeft == 0 && newValue.sixPointsLeft == 0) {
+            for (const skill of adventurer.initialSkills) {
+                if (skill.value == 0) {
+                    skill.value = 4;
+                }
+            }
+            generatorStore.creator.step1Completed = true;
+        } else {
+            for (const skill of adventurer.initialSkills) {
+                if (skill.value == 4) {
+                    skill.value = 0;
+                }
+            }
+            generatorStore.creator.step1Completed = false;
+        }
+    }
+)
+</script>
+
+<style lang="scss" scoped>
+.skills-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.skill {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-end;
+
+    .name {
+        width: 8rem;
+        text-transform: capitalize;
+    }
+
+    .selector {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: .5rem;
+
+        button {
+            height: 1rem;
+            width: 1rem;
+            cursor: pointer;
+
+            &.checked {
+                background: red;
+            }
+
+        }
+    }
+}
+</style>

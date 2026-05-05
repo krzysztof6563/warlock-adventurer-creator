@@ -1,0 +1,368 @@
+[
+    {
+        "name": "acolyte",
+        "skills": {
+            "leadership": 10,
+            "stablekeeping": 10,
+            "incantation": 12,
+            "medicine": 12,
+            "persuasion": 12
+        }
+    },
+    {
+        "name": "outlaw",
+        "skills": {
+            "medicine": 10,
+            "sleight_of_hand": 10,
+            "intimidation": 12,
+            "large_blades": 12,
+            "throwing": 12
+        }
+    },
+    {
+        "name": "circus_performer",
+        "skills": {
+            "diplomacy": 10,
+            "history": 10,
+            "brawling": 12,
+            "camouflage": 12,
+            "persuasion": 12
+        }
+    },
+    {
+        "name": "boatman",
+        "skills": {
+            "navigation": 10,
+            "repair": 10,
+            "bludgeons": 12,
+            "resolve": 12,
+            "swimming": 12
+        }
+    },
+    {
+        "name": "storyteller",
+        "skills": {
+            "dodge": 10,
+            "history": 10,
+            "identification": 12,
+            "deception": 12,
+            "streetwise": 12
+        }
+    },
+    {
+        "name": "miner",
+        "skills": {
+            "survival": 10,
+            "swimming": 10,
+            "athletics": 12,
+            "resolve": 12,
+            "navigation": 12
+        }
+    },
+    {
+        "name": "gambler",
+        "skills": {
+            "bargaining": 10,
+            "perception": 10,
+            "persuasion": 12,
+            "sleight_of_hand": 12,
+            "deception": 12
+        }
+    },
+    {
+        "name": "grave_robber",
+        "skills": {
+            "intimidation": 10,
+            "stablekeeping": 10,
+            "persuasion": 12,
+            "small_blades": 12,
+            "perception": 12
+        }
+    },
+    {
+        "name": "bounty_hunter",
+        "skills": {
+            "bargaining": 10,
+            "firearms": 10,
+            "small_blades": 12,
+            "perception": 12,
+            "streetwise": 12
+        }
+    },
+    {
+        "name": "crypt_raider",
+        "skills": {
+            "athletics": 10,
+            "intimidation": 10,
+            "bludgeons": 12,
+            "resolve": 12,
+            "identification": 12
+        }
+    },
+    {
+        "name": "mercenary",
+        "skills": {
+            "resolve": 10,
+            "streetwise": 10,
+            "firearms": 12,
+            "dodge": 12,
+            "large_blades": 12
+        }
+    },
+    {
+        "name": "bodyguard",
+        "skills": {
+            "medicine": 10,
+            "throwing": 10,
+            "dodge": 12,
+            "intimidation": 12,
+            "large_blades": 12
+        }
+    },
+    {
+        "name": "agitator",
+        "skills": {
+            "small_blades": 10,
+            "intimidation": 10,
+            "dodge": 12,
+            "persuasion": 12,
+            "streetwise": 12
+        }
+    },
+    {
+        "name": "brigand",
+        "skills": {
+            "stealth": 10,
+            "throwing": 10,
+            "bludgeons": 12,
+            "intimidation": 12,
+            "streetwise": 12
+        }
+    },
+    {
+        "name": "road_warden",
+        "skills": {
+            "firearms": 10,
+            "dodge": 10,
+            "navigation": 12,
+            "polearms": 12,
+            "stablekeeping": 12
+        }
+    },
+    {
+        "name": "city_guard",
+        "skills": {
+            "leadership": 10,
+            "stablekeeping": 10,
+            "firearms": 12,
+            "polearms": 12,
+            "throwing": 12
+        }
+    },
+    {
+        "name": "rat_catcher",
+        "skills": {
+            "athletics": 10,
+            "medicine": 10,
+            "brawling": 12,
+            "stealth": 12,
+            "survival": 12
+        }
+    },
+    {
+        "name": "noble",
+        "skills": {
+            "linguistics": 10,
+            "medicine": 10,
+            "leadership": 12,
+            "diplomacy": 12,
+            "history": 12
+        }
+    },
+    {
+        "name": "tracker",
+        "skills": {
+            "stealth": 10,
+            "swimming": 10,
+            "bows": 12,
+            "perception": 12,
+            "survival": 12
+        }
+    },
+    {
+        "name": "wizard_apprentice",
+        "skills": {
+            "leadership": 10,
+            "persuasion": 10,
+            "history": 12,
+            "linguistics": 12,
+            "incantation": 12
+        }
+    },
+    {
+        "name": "traveling_merchant",
+        "skills": {
+            "stablekeeping": 10,
+            "streetwise": 10,
+            "identification": 12,
+            "bargaining": 12,
+            "repair": 12
+        }
+    },
+    {
+        "name": "thief",
+        "skills": {
+            "deception": 10,
+            "streetwise": 10,
+            "sleight_of_hand": 12,
+            "small_blades": 12,
+            "perception": 12
+        }
+    },
+    {
+        "name": "beggar",
+        "skills": {
+            "identification": 10,
+            "bludgeons": 10,
+            "deception": 12,
+            "perception": 12,
+            "streetwise": 12
+        }
+    },
+    {
+        "name": "soldier",
+        "skills": {
+            "leadership": 10,
+            "bows": 10,
+            "dodge": 12,
+            "large_blades": 12,
+            "polearms": 12
+        }
+    },
+    {
+        "name": "astrologer",
+        "restriction": "E",
+        "skills": {
+            "identification": 10,
+            "diplomacy": 10,
+            "history": 12,
+            "navigation": 12,
+            "perception": 12
+        }
+    },
+    {
+        "name": "sewer_worker",
+        "restriction": "N",
+        "skills": {
+            "bargaining": 10,
+            "medicine": 10,
+            "athletics": 12,
+            "small_blades": 12,
+            "streetwise": 12
+        }
+    },
+    {
+        "name": "pastry_master",
+        "restriction": "N",
+        "skills": {
+            "bargaining": 10,
+            "small_blades": 10,
+            "stablekeeping": 12,
+            "persuasion": 12,
+            "streetwise": 12
+        }
+    },
+    {
+        "name": "clan_guard",
+        "restriction": "E",
+        "skills": {
+            "resolve": 10,
+            "large_blades": 10,
+            "bows": 12,
+            "navigation": 12,
+            "survival": 12
+        }
+    },
+    {
+        "name": "tunnel_warrior",
+        "restriction": "K",
+        "skills": {
+            "resolve": 10,
+            "intimidation": 10,
+            "large_blades": 12,
+            "stealth": 12,
+            "survival": 12
+        }
+    },
+    {
+        "name": "inventor",
+        "restriction": "K",
+        "skills": {
+            "brawling": 10,
+            "diplomacy": 10,
+            "bargaining": 12,
+            "repair": 12,
+            "sleight_of_hand": 12
+        }
+    },
+    {
+        "name": "mudlark",
+        "skills": {
+            "perception": 10,
+            "survival": 10,
+            "identification": 12,
+            "resolve": 12,
+            "swimming": 12
+        }
+    },
+    {
+        "name": "docker",
+        "skills": {
+            "brawling": 10,
+            "intimidation": 10,
+            "bargaining": 12,
+            "streetwise": 12,
+            "swimming": 12
+        }
+    },
+    {
+        "name": "innkeeper",
+        "skills": {
+            "bargaining": 10,
+            "history": 10,
+            "identification": 12,
+            "bludgeons": 12,
+            "persuasion": 12
+        }
+    },
+    {
+        "name": "fisherman",
+        "skills": {
+            "repair": 10,
+            "throwing": 10,
+            "resolve": 12,
+            "navigation": 12,
+            "swimming": 12
+        }
+    },
+    {
+        "name": "servant",
+        "skills": {
+            "resolve": 10,
+            "history": 10,
+            "diplomacy": 12,
+            "perception": 12,
+            "stealth": 12
+        }
+    },
+    {
+        "name": "night_watchman",
+        "skills": {
+            "bludgeons": 10,
+            "deception": 10,
+            "intimidation": 12,
+            "stealth": 12,
+            "streetwise": 12
+        }
+    }
+]
