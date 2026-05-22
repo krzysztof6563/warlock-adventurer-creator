@@ -5,6 +5,12 @@ const sortedSkills = (skills, t) => {
 
         return leftLabel.localeCompare(rightLabel, "pl");
     });
-}
+};
 
-export { sortedSkills }
+const timeoutScrollToBottom = () => {
+    setTimeout(() => {
+        window.scrollTo({ top: document.body.clientHeight, behavior: "smooth" });
+    }, 100);
+};
+
+export { sortedSkills, timeoutScrollToBottom };

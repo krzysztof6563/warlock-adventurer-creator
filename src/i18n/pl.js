@@ -82,46 +82,185 @@ export default {
     },
     warlock: {
         talents: {
-            antimagic: "Antymagiczny",
-            attractiveness: "Atrakcyjność",
-            unscarred: "Bez rysów",
-            insomnia: "Bezsenność",
-            businessman: "Biznesmen",
-            scar: "Blizna",
-            lightning_reflexes: "Błaskawiczny refleks",
-            human_bed: "Człowiek-łózko",
-            keen_hearing: "Czuły słuch",
-            innate_spell: "Wrodzone zaklęcie",
-            perfect_memory: "Doskonała pamięć",
-            thick_skin: "Gruba skóra",
-            rubber_body: "Gumowe ciało",
-            killer_instinct: "Instynkt zabójcy",
-            hawk: "Jastrząb",
-            cockroach: "Karaluch",
-            cat_eyes: "Kocie oczy",
-            inner_compass: "Kompas w głowie",
-            stone_hands: "Łapy z kamienia",
-            dark_destiny: "Mroczne przeznaczenie",
-            unkillable: "Nie do zabicia",
-            ambidexterity: "Oburęczność",
-            paranoia: "Paranoja",
-            animal_friend: "Przyjaciel zwierząt",
-            friendly_face: "Przyjazna twarz",
-            strong_arm: "Silne ramię",
-            rascal: "Skurczybyk",
-            aptitude: "Smykałka",
-            prophetic_dreams: "Prorocze sny",
-            specialist: "Specjalista",
-            iron_stomach: "Stalowy żołądek",
-            quick_feet: "Szybkie stopy",
-            armor_training: "Trening pancerza",
-            natural_marksman: "Urodzony strzelec",
-            luck_of_the_gods: "Szczęście bogów",
-            witch_sight: "Wiedźmi wzrok",
-            versatility: "Wszechstronność",
-            quarry: "Zdobycz",
-            connections: "Znajomości",
-            evil_eye: "Złe oko",
+            antimagic: {
+                key: "Antymagiczny",
+                description:
+                    "Z jakiegoś powodu magia odbija się od twojego ciała. Zawsze możesz wykonać test inkantacji, by uchronić się przed zaklęciem.",
+            },
+            attractiveness: {
+                key: "Atrakcyjność",
+                description:
+                    "Ludzie rumienią się na twój widok. Automatycznie zaliczasz testy targowania lub perswazji, jeśli ofiara jest zauroczona.",
+            },
+            unscarred: {
+                key: "Bez rysów",
+                description: "Ludzie mają problem, by cię zapamiętać i opisać.",
+            },
+            insomnia: {
+                key: "Bezsenność",
+                description:
+                    "Możesz wykonywać testy dostrzegania nawet podczas snu oraz natychmiast się obudzić i działać.",
+            },
+            businessman: {
+                key: "Biznesmen",
+                description:
+                    "Kłócisz się z handlarzami do upadłego. Zawsze odejmujesz 1 od wyniku rzutu na cenę przedmiotu.",
+            },
+            scar: {
+                key: "Blizna",
+                description:
+                    "Masz potężną bliznę na twarzy. Łatwiej ci zastraszać (+2), lecz ciężej prowadzić normalne rozmowy (-2).",
+            },
+            lightning_reflexes: {
+                key: "Błaskawiczny refleks",
+                description: "Zawsze możesz poruszyć się pierwszy w rundzie walki, chyba że zostałeś zaskoczony.",
+            },
+            human_bed: {
+                key: "Człowiek-łóżko",
+                description: "Potrafisz spać wszędzie. Zawsze budzisz się wyspany i naładowany energią.",
+            },
+            keen_hearing: {
+                key: "Czuły słuch",
+                description: "Możesz wsłuchiwać się w szepty i rozmowy za drzwiami, wykonując testy dostrzegania.",
+            },
+            innate_spell: {
+                key: "Wrodzone zaklęcie",
+                description:
+                    "Od urodzenia potrafisz rzucać jedno wybrane zaklęcie. Nadal wymaga testu inkantacji i poświęcenia wytrzymałości.",
+            },
+            perfect_memory: {
+                key: "Doskonała pamięć",
+                description:
+                    "Zawsze zapamiętujesz wszystko, co widziałeś lub przeczytałeś. Każde nieudane splatanie przy takim czarowaniu skutkuje gniewem zaświatów.",
+            },
+            thick_skin: {
+                key: "Gruba skóra",
+                description: "Redukujesz otrzymane obrażenia obuchowe o 1.",
+            },
+            rubber_body: {
+                key: "Gumowe ciało",
+                description:
+                    "Potrafisz wyginać kończyny w niezwykły sposób i przeciskać się przez szczeliny.",
+            },
+            killer_instinct: {
+                key: "Instynkt zabójcy",
+                description: "+2 do wyników ataków krytycznych, które wyprowadzasz.",
+            },
+            hawk: {
+                key: "Jastrząb",
+                description: "Masz niezwykle dobry wzrok. Nie otrzymujesz kar za strzał na duży dystans.",
+            },
+            cockroach: {
+                key: "Karaluch",
+                description:
+                    "Zawsze potrafisz uniknąć zagrożenia. W beznadziejnej sytuacji możesz wykonać test Szczęścia i nagle zniknąć.",
+            },
+            cat_eyes: {
+                key: "Kocie oczy",
+                description: "Widzisz dobrze w ciemności; krasnolud/elf widzi w kompletnym mroku.",
+            },
+            inner_compass: {
+                key: "Kompas w głowie",
+                description: "Zawsze wiesz, gdzie jest północ i nie możesz się zgubić.",
+            },
+            stone_hands: {
+                key: "Łapy z kamienia",
+                description: "Twoje ręce i nogi traktowane są jak broń zadająca 1k6 obrażeń.",
+            },
+            dark_destiny: {
+                key: "Mroczne przeznaczenie",
+                description:
+                    "Masz dziwny znak na ciele. Raz umrzesz i wrócisz, ale jeśli nie wykonasz polecenia, tracisz na stałe 3 Wytrzymałości.",
+            },
+            unkillable: {
+                key: "Nie do zabicia",
+                description: "Obniżasz krytyczne obrażenia od ataków o 2. Ignorujesz wynik 1 lub mniej.",
+            },
+            ambidexterity: {
+                key: "Oburęczność",
+                description:
+                    "Walisz obiema rękami jednakowo. Przy dwóch broniach możesz zaatakować bez premii +5 do rzutu.",
+            },
+            paranoia: {
+                key: "Paranoja",
+                description: "Nie można cię w żaden sposób zaskoczyć, zawsze czujesz, że coś jest nie tak.",
+            },
+            animal_friend: {
+                key: "Przyjaciel zwierząt",
+                description: "Świetnie dogadujesz się ze zwierzętami. Nie atakują cię, chyba że je sprowokujesz.",
+            },
+            friendly_face: {
+                key: "Przyjazna twarz",
+                description: "Nieprzyjaźni traktują cię neutralnie, a neutralni przyjaźnie.",
+            },
+            strong_arm: {
+                key: "Silne ramię",
+                description: "+1 do obrażeń zadawanych wręcz.",
+            },
+            rascal: {
+                key: "Skurczybyk",
+                description: "Jesteś w stanie wiele wytrzymać. Wytrzymałość podniesiona o 4.",
+            },
+            aptitude: {
+                key: "Smykałka",
+                description:
+                    "Wybierz jedną umiejętność. Zawsze możesz ją rozwijać niezależnie od profesji podstawowej.",
+            },
+            prophetic_dreams: {
+                key: "Prorocze sny",
+                description:
+                    "Męczą cię prorocze sny i koszmary. Raz na sesję MG może podmienić twój nieudany test na test Szczęścia.",
+            },
+            specialist: {
+                key: "Specjalista",
+                description: "Chcesz być najlepszy w fachu. +2 do umiejętności wszystkich twoich profesji.",
+            },
+            iron_stomach: {
+                key: "Stalowy żołądek",
+                description:
+                    "Potrafisz zjeść wszystko i trucizna niewiele ci robi. Możesz zjeść zgniły pokarm.",
+            },
+            quick_feet: {
+                key: "Szybkie stopy",
+                description:
+                    "W walce możesz ruszyć się o jeden zasięg i nadal wykonać akcję (bez sprintu).",
+            },
+            armor_training: {
+                key: "Trening pancerza",
+                description: "Dodaj +1 do wartości każdego pancerza, który nosisz.",
+            },
+            natural_marksman: {
+                key: "Urodzony strzelec",
+                description: "+1 do obrażeń zadawanych na dystans.",
+            },
+            luck_of_the_gods: {
+                key: "Szczęście bogów",
+                description: "Od urodzenia masz farta. Szczęście podniesione o 2.",
+            },
+            witch_sight: {
+                key: "Wiedźmi wzrok",
+                description: "Widzisz rzeczy niewidoczne dla normalnych ludzi: magię, duchy i demony.",
+            },
+            versatility: {
+                key: "Wszechstronność",
+                description:
+                    "Wybierz trzy profesje podstawowe. Twoja umiejętność profesji nie może być mniejsza niż 4.",
+            },
+            quarry: {
+                key: "Zdobycz",
+                description:
+                    "Masz dziwne przedmioty. Zaczynasz z dwoma przedmiotami wartymi 1k6 złota lub jednym za 2k6.",
+            },
+            connections: {
+                key: "Znajomości",
+                description:
+                    "Znajdziesz wiele odpowiednich i przydatnych osób. Raz na sesję możesz wykonać test Szczęścia, by trafić na pomoc.",
+            },
+            evil_eye: {
+                key: "Złe oko",
+                description:
+                    "Potrafisz zesłać klątwę spojrzeniem. Rzuć sesję na k6 i poświęć punkt Szczęścia.",
+            },
         },
         looks: {
             height: {

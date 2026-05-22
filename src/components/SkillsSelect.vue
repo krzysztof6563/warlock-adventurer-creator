@@ -1,6 +1,12 @@
 <template>
     <div class="flex-between">
-        <h2>{{ $t("form.step1.initial_skills_header") }}</h2>
+        <div class="flex-column">
+            <h2 style="margin-bottom: 0">{{ $t("form.step1.initial_skills_header") }}</h2>
+            <div>
+                <button class="btn" @click="rollSkills">{{ $t("form.step4.roll") }}</button>
+                <span> lub wybierz</span>
+            </div>
+        </div>
         <div>
             <div>
                 {{ $t("skillselect.six_points_left", { number: generatorStore.creator.sixPointsLeft }) }}
@@ -36,14 +42,16 @@
                     ></button>
                 </div>
             </div>
-            <div class="current">
+            <!-- <div class="current">
                 {{ generatorStore.adventurer.getInitialSkillValue(skill.name) }}
-            </div>
+            </div> -->
         </div>
     </div>
 </template>
 
 <script setup>
+import { timeoutScrollToBottom } from "@/core/helpers";
+import { getRandomInt } from "@/core/roll";
 import { useGeneratorStore } from "@/stores/generator";
 import { watch } from "vue";
 
@@ -93,7 +101,7 @@ watch(
         fivePointsLeft: generatorStore.creator.fivePointsLeft,
         sixPointsLeft: generatorStore.creator.sixPointsLeft,
     }),
-    (newValue) => {
+    (newValue, oldValue) => {
         if (adventurer.profession) {
             adventurer.setSkillsBasedOnProfession(adventurer.profession);
         }
@@ -104,6 +112,7 @@ watch(
                 }
             }
             generatorStore.creator.step1Completed = true;
+            generatorStore.creator.stepCompleted = Math.max(1, generatorStore.creator.stepCompleted);
         } else {
             for (const skill of adventurer.initialSkills) {
                 if (skill.value == 4) {
@@ -114,6 +123,36 @@ watch(
         }
     },
 );
+
+const rollSkills = () => {
+    const length = generatorStore.adventurer.initialSkills.length;
+    let fivePointsIndexes = [];
+    let sixPointsIndexes = [];
+    generatorStore.creator.sixPointsLeft = 0;
+    generatorStore.creator.fivePointsLeft = 0;
+    generatorStore.creator.stepCompleted = Math.max(1, generatorStore.creator.stepCompleted);
+
+    generatorStore.adventurer.initialSkills.forEach((element) => {
+        adventurer.setInitialSkillValue(element.name, 4);
+    });
+
+    while (fivePointsIndexes.length < 10) {
+        let randIndex = getRandomInt(length);
+        if (!(fivePointsIndexes.includes(randIndex) || sixPointsIndexes.includes(randIndex))) {
+            fivePointsIndexes.push(randIndex);
+            adventurer.setInitialSkillValue(generatorStore.adventurer.initialSkills[randIndex].name, 5);
+        }
+    }
+    while (sixPointsIndexes.length < 10) {
+        let randIndex = getRandomInt(length);
+        if (!(fivePointsIndexes.includes(randIndex) || sixPointsIndexes.includes(randIndex))) {
+            sixPointsIndexes.push(randIndex);
+            adventurer.setInitialSkillValue(generatorStore.adventurer.initialSkills[randIndex].name, 6);
+        }
+    }
+
+    timeoutScrollToBottom();
+};
 </script>
 
 <style lang="scss" scoped>
@@ -149,7 +188,7 @@ watch(
             cursor: pointer;
 
             &.checked {
-                background: red;
+                background: #313131;
             }
         }
     }

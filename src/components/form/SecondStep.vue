@@ -2,7 +2,9 @@
     <div class="card">
         <div class="flex-between">
             <h2>{{ $t("form.step2.header") }}</h2>
-            <button class="btn btn-primary" @click="rollAll">Losuj wszystko</button>
+            <button class="btn btn-primary" :disabled="wasRolled" @click="rollAll">
+                {{ $t("form.step4.roll_all") }}
+            </button>
         </div>
         <div class="grid-2x">
             <div class="form-input" style="grid-column: span 2">
@@ -55,15 +57,42 @@
 <script setup>
 import { useGeneratorStore } from "@/stores/generator";
 import { roll } from "@/core/roll";
+import { ref, watch } from "vue";
+import { timeoutScrollToBottom } from "@/core/helpers";
 
 const generatorStore = useGeneratorStore();
 const adventurer = generatorStore.adventurer;
+
+const wasRolled = ref(false);
 
 const rollAll = () => {
     adventurer.stamina = roll("2k6+12");
     adventurer.luck = roll("1k6+7");
     adventurer.society = generatorStore.societies[roll("1k4") - 1];
+    wasRolled.value = true;
 };
+
+watch(
+    () => ({
+        name: adventurer.name,
+        stamina: adventurer.stamina,
+        society: adventurer.society,
+        luck: adventurer.luck,
+        courage: adventurer.courage,
+    }),
+    (oldValue, newValue) => {
+        if (
+            newValue.name != "" &&
+            newValue.stamina != "" &&
+            newValue.society != "" &&
+            newValue.luck != "" &&
+            newValue.courage != ""
+        ) {
+            generatorStore.creator.stepCompleted = Math.max(2, generatorStore.creator.stepCompleted);
+            timeoutScrollToBottom();
+        }
+    },
+);
 </script>
 
 <style lang="scss" scoped>

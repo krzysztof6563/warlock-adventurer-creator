@@ -5,22 +5,15 @@
                 <section id="first-step">
                     <FirstStep />
                 </section>
-                <section id="second-step" style="margin-top: 2rem">
+                <section id="second-step" style="margin-top: 2rem" v-if="generatorStore.creator.stepCompleted >= 1">
                     <SecondStep />
                 </section>
-                <section id="third-step">
+                <section id="third-step" v-if="generatorStore.creator.stepCompleted >= 2">
                     <ThirdStep />
                 </section>
-                <section id="fourth-step" style="margin-top: 2rem">
+                <section id="fourth-step" style="margin-top: 2rem" v-if="generatorStore.creator.stepCompleted >= 3">
                     <FourthStep />
                 </section>
-
-                <!-- <section style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem">
-                <div v-for="profession in generatorStore.professions" style="border: 1px solid grey;">
-                    <i>{{ profession.name }}:</i> <b>{{ $t(`profession.${profession.name}`) }}</b>
-                    <div v-for="(value, skill) in profession.skills">{{ skill }}: {{ value }}</div>
-                </div>
-            </section> -->
             </div>
             <div class="summary-wrapper">
                 <FormSummary />

@@ -33,4 +33,8 @@ const rollRangeTable = (table, rollValue) => {
     return table?.entries?.find((item) => rollValue >= item.min && rollValue <= item.max) ?? null;
 };
 
-export { roll, rollTable, rollRangeTable };
+const getRandomInt = (max) => {
+    return Math.floor(Math.random() * max);
+};
+
+export { roll, rollTable, rollRangeTable, getRandomInt };

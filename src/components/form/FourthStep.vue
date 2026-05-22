@@ -2,7 +2,9 @@
     <div class="card">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; gap: 1rem">
             <h2 style="margin: 0">{{ t("form.step4.title") }}</h2>
-            <button class="btn btn-primary" @click="rollAll">{{ t("form.step4.roll_all") }}</button>
+            <button class="btn btn-primary" @click="rollAll" :disabled="isAllRolled">
+                {{ t("form.step4.roll_all") }}
+            </button>
         </div>
 
         <div class="grid-2x">
@@ -10,18 +12,29 @@
                 <div class="panel-header">
                     <label>{{ t("form.step4.talents") }}</label>
                     <div class="row">
-                        <button class="btn" @click="rollTalents">{{ t("form.step4.roll") }}</button>
+                        <button class="btn" @click="rollTalents" :disabled="isTalentsRolled">
+                            {{ t("form.step4.roll") }}
+                        </button>
                     </div>
                 </div>
-                <div v-if="step4.talents[0]">{{ t(`warlock.talents.${step4.talents[0]}`) }}</div>
-                <div v-if="step4.talents[1]">{{ t(`warlock.talents.${step4.talents[1]}`) }}</div>
+                <template v-if="step4.talents[0]">
+                    <div>{{ talentKey(step4.talents[0]) }}</div>
+                    <div class="description">{{ talentDescription(step4.talents[0]) }}</div>
+                </template>
+                <template v-if="step4.talents[1]">
+                    <hr style="opacity: 0.5; margin-block: 0.4rem" />
+                    <div>{{ talentKey(step4.talents[1]) }}</div>
+                    <div class="description">{{ talentDescription(step4.talents[1]) }}</div>
+                </template>
             </div>
 
             <div class="panel">
                 <div class="panel-header">
                     <label>{{ t("form.step4.height") }}</label>
                     <div class="row">
-                        <button class="btn" @click="rollHeight">{{ t("form.step4.roll") }}</button>
+                        <button class="btn" @click="rollHeight" :disabled="isHeightRolled">
+                            {{ t("form.step4.roll") }}
+                        </button>
                     </div>
                 </div>
                 <div>{{ step4.height ? t(`warlock.looks.height.${step4.height}`) : t("form.step4.not_set") }}</div>
@@ -31,7 +44,9 @@
                 <div class="panel-header">
                     <label>{{ t("form.step4.hair_color") }}</label>
                     <div class="row">
-                        <button class="btn" @click="rollHairColor">{{ t("form.step4.roll") }}</button>
+                        <button class="btn" @click="rollHairColor" :disabled="isHairColorRolled">
+                            {{ t("form.step4.roll") }}
+                        </button>
                     </div>
                 </div>
                 <div>
@@ -43,7 +58,9 @@
                 <div class="panel-header">
                     <label>{{ t("form.step4.body_build") }}</label>
                     <div class="row">
-                        <button class="btn" @click="rollBodyBuild">{{ t("form.step4.roll") }}</button>
+                        <button class="btn" @click="rollBodyBuild" :disabled="isBodyBuildRolled">
+                            {{ t("form.step4.roll") }}
+                        </button>
                     </div>
                 </div>
                 <div>
@@ -55,7 +72,9 @@
                 <div class="panel-header">
                     <label>{{ t("form.step4.hair_type") }}</label>
                     <div class="row">
-                        <button class="btn" @click="rollHairType">{{ t("form.step4.roll") }}</button>
+                        <button class="btn" @click="rollHairType" :disabled="isHairTypeRolled">
+                            {{ t("form.step4.roll") }}
+                        </button>
                     </div>
                 </div>
                 <div>
@@ -67,7 +86,9 @@
                 <div class="panel-header">
                     <label>{{ t("form.step4.skin") }}</label>
                     <div class="row">
-                        <button class="btn" @click="rollSkin">{{ t("form.step4.roll") }}</button>
+                        <button class="btn" @click="rollSkin" :disabled="isSkinRolled">
+                            {{ t("form.step4.roll") }}
+                        </button>
                     </div>
                 </div>
                 <div>{{ step4.skin ? t(`warlock.looks.skin.${step4.skin}`) : t("form.step4.not_set") }}</div>
@@ -77,7 +98,9 @@
                 <div class="panel-header">
                     <label>{{ t("form.step4.hairstyle") }}</label>
                     <div class="row">
-                        <button class="btn" @click="rollHairstyle">{{ t("form.step4.roll") }}</button>
+                        <button class="btn" @click="rollHairstyle" :disabled="isHairstyleRolled">
+                            {{ t("form.step4.roll") }}
+                        </button>
                     </div>
                 </div>
                 <div>
@@ -89,7 +112,9 @@
                 <div class="panel-header">
                     <label>{{ t("form.step4.facial_hair") }}</label>
                     <div class="row">
-                        <button class="btn" @click="rollFacialHair">{{ t("form.step4.roll") }}</button>
+                        <button class="btn" @click="rollFacialHair" :disabled="isFacialHairRolled">
+                            {{ t("form.step4.roll") }}
+                        </button>
                     </div>
                 </div>
                 <div>
@@ -103,7 +128,9 @@
                 <div class="panel-header">
                     <label>{{ t("form.step4.misfortune") }}</label>
                     <div class="row">
-                        <button class="btn" @click="rollMisfortune">{{ t("form.step4.roll") }}</button>
+                        <button class="btn" @click="rollMisfortune" :disabled="isMisfortuneRolled">
+                            {{ t("form.step4.roll") }}
+                        </button>
                     </div>
                 </div>
                 <div>
@@ -115,7 +142,9 @@
                 <div class="panel-header">
                     <label>{{ t("form.step4.keepsake") }}</label>
                     <div class="row">
-                        <button class="btn" @click="rollKeepsake">{{ t("form.step4.roll") }}</button>
+                        <button class="btn" @click="rollKeepsake" :disabled="isKeepsakeRolled">
+                            {{ t("form.step4.roll") }}
+                        </button>
                     </div>
                 </div>
                 <template v-if="step4.keepsake">
@@ -129,7 +158,9 @@
                 <div class="panel-header">
                     <label>{{ t("form.step4.where_from") }}</label>
                     <div class="row">
-                        <button class="btn" @click="rollWhereFrom">{{ t("form.step4.roll") }}</button>
+                        <button class="btn" @click="rollWhereFrom" :disabled="isWhereFromRolled">
+                            {{ t("form.step4.roll") }}
+                        </button>
                     </div>
                 </div>
                 <template v-if="step4.whereFrom">
@@ -145,7 +176,9 @@
                         {{ t("form.step4.travel_reason") }}<br /><span class="sub-label">{{ $t("choose") }}</span>
                     </label>
                     <div class="row">
-                        <button class="btn" @click="rollTravelReason">{{ t("form.step4.roll") }}</button>
+                        <button class="btn" @click="rollTravelReason" :disabled="isTravelReasonRolled">
+                            {{ t("form.step4.roll") }}
+                        </button>
                     </div>
                 </div>
                 <div class="choices" v-if="step4.travelReasonOptions.length">
@@ -169,7 +202,9 @@
                     </label>
                     <div class="row"></div>
 
-                    <button class="btn" @click="rollHowWeMet">{{ t("form.step4.roll") }}</button>
+                    <button class="btn" @click="rollHowWeMet" :disabled="isHowWeMetRolled">
+                        {{ t("form.step4.roll") }}
+                    </button>
                 </div>
                 <div class="choices" v-if="step4.howWeMetOptions.length">
                     <button
@@ -192,7 +227,9 @@
                     </label>
                     <div class="row"></div>
 
-                    <button class="btn" @click="rollDarkSecret">{{ t("form.step4.roll") }}</button>
+                    <button class="btn" @click="rollDarkSecret" :disabled="isDarkSecretRolled">
+                        {{ t("form.step4.roll") }}
+                    </button>
                 </div>
                 <div class="choices" v-if="step4.darkSecretOptions.length">
                     <button
@@ -212,7 +249,9 @@
                 <div class="panel-header">
                     <label>{{ t("form.step4.farewell") }}</label>
                     <div class="row">
-                        <button class="btn" @click="rollFarewell">{{ t("form.step4.roll") }}</button>
+                        <button class="btn" @click="rollFarewell" :disabled="isFarewellRolled">
+                            {{ t("form.step4.roll") }}
+                        </button>
                     </div>
                 </div>
                 <template v-if="step4.farewell">
@@ -226,7 +265,9 @@
                 <div class="panel-header">
                     <label>{{ t("form.step4.who_you_know") }}</label>
                     <div class="row">
-                        <button class="btn" @click="rollWhoYouKnow">{{ t("form.step4.roll") }}</button>
+                        <button class="btn" @click="rollWhoYouKnow" :disabled="isWhoYouKnowRolled">
+                            {{ t("form.step4.roll") }}
+                        </button>
                     </div>
                 </div>
                 <template v-if="step4.whoYouKnow">
@@ -240,7 +281,9 @@
                 <div class="panel-header">
                     <label>{{ t("form.step4.passions") }}</label>
                     <div class="row">
-                        <button class="btn" @click="rollPassions">{{ t("form.step4.roll") }}</button>
+                        <button class="btn" @click="rollPassions" :disabled="isPassionsRolled">
+                            {{ t("form.step4.roll") }}
+                        </button>
                     </div>
                 </div>
 
@@ -268,19 +311,68 @@
 <script setup>
 import { useGeneratorStore } from "@/stores/generator";
 import { roll, rollTable, rollRangeTable } from "@/core/roll";
+import { computed } from "vue";
 import { useI18n } from "vue-i18n";
 
 const generatorStore = useGeneratorStore();
 const { t } = useI18n();
-const step4 = generatorStore.creator.step4;
+const step4 = generatorStore.adventurer;
 
 const itemKey = (collection, key) => t(`warlock.${collection}.${key}.key`);
 const itemDescription = (collection, key) => t(`warlock.${collection}.${key}.description`);
+const talentKey = (key) => {
+    const path = `warlock.talents.${key}.key`;
+    const value = t(path);
+    return value === path ? t(`warlock.talents.${key}`) : value;
+};
+const talentDescription = (key) => {
+    const path = `warlock.talents.${key}.description`;
+    const value = t(path);
+    return value === path ? null : value;
+};
 
 const asKey = (item) => {
     if (!item) return null;
     return typeof item === "string" ? item : (item.key ?? null);
 };
+
+const isTalentsRolled = computed(() => Boolean(step4.talents?.[0] && step4.talents?.[1]));
+const isHeightRolled = computed(() => Boolean(step4.height));
+const isHairColorRolled = computed(() => Boolean(step4.hairColor));
+const isBodyBuildRolled = computed(() => Boolean(step4.bodyBuild));
+const isHairTypeRolled = computed(() => Boolean(step4.hairType));
+const isSkinRolled = computed(() => Boolean(step4.skin));
+const isHairstyleRolled = computed(() => Boolean(step4.hairstyle));
+const isFacialHairRolled = computed(() => Boolean(step4.facialHair));
+const isMisfortuneRolled = computed(() => Boolean(step4.misfortune));
+const isKeepsakeRolled = computed(() => Boolean(step4.keepsake));
+const isWhereFromRolled = computed(() => Boolean(step4.whereFrom));
+const isTravelReasonRolled = computed(() => Boolean(step4.travelReason));
+const isHowWeMetRolled = computed(() => Boolean(step4.howWeMet));
+const isDarkSecretRolled = computed(() => Boolean(step4.darkSecret));
+const isFarewellRolled = computed(() => Boolean(step4.farewell));
+const isWhoYouKnowRolled = computed(() => Boolean(step4.whoYouKnow));
+const isPassionsRolled = computed(() => Boolean(step4.passionPositive && step4.passionNegative));
+const isAllRolled = computed(
+    () =>
+        isTalentsRolled.value &&
+        isHeightRolled.value &&
+        isHairColorRolled.value &&
+        isBodyBuildRolled.value &&
+        isHairTypeRolled.value &&
+        isSkinRolled.value &&
+        isHairstyleRolled.value &&
+        isFacialHairRolled.value &&
+        isMisfortuneRolled.value &&
+        isKeepsakeRolled.value &&
+        isWhereFromRolled.value &&
+        isTravelReasonRolled.value &&
+        isHowWeMetRolled.value &&
+        isDarkSecretRolled.value &&
+        isFarewellRolled.value &&
+        isWhoYouKnowRolled.value &&
+        isPassionsRolled.value,
+);
 
 const rollTalents = () => {
     const rolledTalents = rollTable(

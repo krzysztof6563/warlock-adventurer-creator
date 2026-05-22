@@ -87,10 +87,12 @@ body {
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
 }
 
 #app {
     max-width: 1280px;
+    width: 100%;
     margin: 0 auto;
     padding: 2rem;
     font-weight: normal;

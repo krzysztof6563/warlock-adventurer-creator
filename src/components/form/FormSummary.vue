@@ -162,13 +162,18 @@ import { useI18n } from "vue-i18n";
 
 const generatorStore = useGeneratorStore();
 const adventurer = generatorStore.adventurer;
-const step4 = generatorStore.creator.step4;
+const step4 = generatorStore.adventurer;
 const { t } = useI18n();
 
 const sortedSkills = computed(() => sortSkills(adventurer.skills, t));
+const talentLabel = (key) => {
+    const path = `warlock.talents.${key}.key`;
+    const value = t(path);
+    return value === path ? t(`warlock.talents.${key}`) : value;
+};
 const step4TalentText = computed(() => {
-    const first = step4.talents?.[0] ? t(`warlock.talents.${step4.talents[0]}`) : null;
-    const second = step4.talents?.[1] ? t(`warlock.talents.${step4.talents[1]}`) : null;
+    const first = step4.talents?.[0] ? talentLabel(step4.talents[0]) : null;
+    const second = step4.talents?.[1] ? talentLabel(step4.talents[1]) : null;
     return [first, second].filter(Boolean).join(", ") || t("form.step4.not_set");
 });
 
