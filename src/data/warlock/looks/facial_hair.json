@@ -1,0 +1,12 @@
+{
+  "key": "facial_hair",
+  "dice": { "count": 1, "sides": 6 },
+  "entries": [
+    { "min": 1, "max": 1, "value": "mighty_mustache" },
+    { "min": 2, "max": 2, "value": "goatee" },
+    { "min": 3, "max": 3, "value": "oiled_beard" },
+    { "min": 4, "max": 4, "value": "neck_beard" },
+    { "min": 5, "max": 5, "value": "large_sideburns" },
+    { "min": 6, "max": 6, "value": "split_beard" }
+  ]
+}

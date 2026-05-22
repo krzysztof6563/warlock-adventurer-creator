@@ -1,0 +1,22 @@
+[
+  { "key": "miniature_family_portrait", "description": "miniature_family_portrait_desc" },
+  { "key": "blessed_figure", "description": "blessed_figure_desc" },
+  { "key": "army_flyers", "description": "army_flyers_desc" },
+  { "key": "carved_wooden_mug", "description": "carved_wooden_mug_desc" },
+  { "key": "silver_table_knife", "description": "silver_table_knife_desc" },
+  { "key": "skull_ring", "description": "skull_ring_desc" },
+  { "key": "carved_wooden_bowl", "description": "carved_wooden_bowl_desc" },
+  { "key": "love_letter", "description": "love_letter_desc" },
+  { "key": "loaded_dice", "description": "loaded_dice_desc" },
+  { "key": "basement_key", "description": "basement_key_desc" },
+  { "key": "revenge_sketch", "description": "revenge_sketch_desc" },
+  { "key": "grandfathers_coin", "description": "grandfathers_coin_desc" },
+  { "key": "magnifying_glasses", "description": "magnifying_glasses_desc" },
+  { "key": "ornamented_drinking_horn", "description": "ornamented_drinking_horn_desc" },
+  { "key": "embroidered_handkerchief", "description": "embroidered_handkerchief_desc" },
+  { "key": "wooden_snuffbox", "description": "wooden_snuffbox_desc" },
+  { "key": "small_cursing_figure", "description": "small_cursing_figure_desc" },
+  { "key": "eagle_eye_amulet", "description": "eagle_eye_amulet_desc" },
+  { "key": "runed_finger_bone", "description": "runed_finger_bone_desc" },
+  { "key": "small_flute", "description": "small_flute_desc" }
+]

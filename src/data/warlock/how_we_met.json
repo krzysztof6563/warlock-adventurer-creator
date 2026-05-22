@@ -1,0 +1,14 @@
+[
+  { "key": "in_a_tavern", "description": "in_a_tavern_desc" },
+  { "key": "in_prison", "description": "in_prison_desc" },
+  { "key": "on_the_road", "description": "on_the_road_desc" },
+  { "key": "at_the_market", "description": "at_the_market_desc" },
+  { "key": "before_entering_the_dungeon", "description": "before_entering_the_dungeon_desc" },
+  { "key": "over_beer", "description": "over_beer_desc" },
+  { "key": "in_a_stable", "description": "in_a_stable_desc" },
+  { "key": "bounty_hunters", "description": "bounty_hunters_desc" },
+  { "key": "the_dungeons", "description": "the_dungeons_desc" },
+  { "key": "on_a_ship", "description": "on_a_ship_desc" },
+  { "key": "since_childhood", "description": "since_childhood_desc" },
+  { "key": "question_marks", "description": "question_marks_desc" }
+]

@@ -1,13 +1,17 @@
 <template>
-    <div>
-        {{ $t('skillselect.six_points_left', { number: generatorStore.creator.sixPointsLeft }) }}
+    <div class="flex-between">
+        <h2>{{ $t("form.step1.initial_skills_header") }}</h2>
+        <div>
+            <div>
+                {{ $t("skillselect.six_points_left", { number: generatorStore.creator.sixPointsLeft }) }}
+            </div>
+            <div>
+                {{ $t("skillselect.five_points_left", { number: generatorStore.creator.fivePointsLeft }) }}
+            </div>
+        </div>
     </div>
-    <div>
-        {{ $t('skillselect.five_points_left', { number: generatorStore.creator.fivePointsLeft }) }}
-    </div>
-
     <div class="skills-wrap">
-        <div class="skill" v-for="(skill) in generatorStore.adventurer.initialSkills">
+        <div class="skill" v-for="skill in generatorStore.adventurer.initialSkills">
             <div class="name">
                 {{ $t(`skill.${skill.name}`) }}
             </div>
@@ -15,18 +19,21 @@
                 <div @click="setSkillValue(skill.name, 6)" class="cursor-pointer">
                     <div>6</div>
                     <button
-                        :class="{ checked: generatorStore.adventurer.getInitialSkillValue(skill.name) == 6 }"></button>
+                        :class="{ checked: generatorStore.adventurer.getInitialSkillValue(skill.name) == 6 }"
+                    ></button>
                 </div>
                 <div @click="setSkillValue(skill.name, 5)" class="cursor-pointer">
                     <div>5</div>
                     <button
-                        :class="{ checked: generatorStore.adventurer.getInitialSkillValue(skill.name) == 5 }"></button>
+                        :class="{ checked: generatorStore.adventurer.getInitialSkillValue(skill.name) == 5 }"
+                    ></button>
                 </div>
 
                 <div>
                     <div>4</div>
                     <button
-                        :class="{ 'checked': generatorStore.adventurer.getInitialSkillValue(skill.name) == 4 }"></button>
+                        :class="{ checked: generatorStore.adventurer.getInitialSkillValue(skill.name) == 4 }"
+                    ></button>
                 </div>
             </div>
             <div class="current">
@@ -37,8 +44,8 @@
 </template>
 
 <script setup>
-import { useGeneratorStore } from '@/stores/generator';
-import { watch } from 'vue';
+import { useGeneratorStore } from "@/stores/generator";
+import { watch } from "vue";
 
 const generatorStore = useGeneratorStore();
 const adventurer = generatorStore.adventurer;
@@ -48,46 +55,47 @@ const setSkillValue = (name, newValue) => {
 
     if (
         (newValue == 5 && generatorStore.creator.fivePointsLeft <= 0 && currentValue != 5) ||
-        (newValue == 6 && generatorStore.creator.sixPointsLeft <= 0 && currentValue != 6)) {
+        (newValue == 6 && generatorStore.creator.sixPointsLeft <= 0 && currentValue != 6)
+    ) {
         return;
     }
 
     if (currentValue == 6 && newValue == 6) {
         generatorStore.creator.sixPointsLeft += 1;
-        adventurer.setInitialSkillValue(name, 0)
+        adventurer.setInitialSkillValue(name, 0);
     }
     if (currentValue == 5 && newValue == 5) {
         generatorStore.creator.fivePointsLeft += 1;
-        adventurer.setInitialSkillValue(name, 0)
+        adventurer.setInitialSkillValue(name, 0);
     }
     if (currentValue == 0 && newValue == 6) {
         generatorStore.creator.sixPointsLeft -= 1;
-        adventurer.setInitialSkillValue(name, newValue)
+        adventurer.setInitialSkillValue(name, newValue);
     }
     if (currentValue == 0 && newValue == 5) {
         generatorStore.creator.fivePointsLeft -= 1;
-        adventurer.setInitialSkillValue(name, newValue)
+        adventurer.setInitialSkillValue(name, newValue);
     }
     if (currentValue == 5 && newValue == 6) {
         generatorStore.creator.fivePointsLeft += 1;
         generatorStore.creator.sixPointsLeft -= 1;
-        adventurer.setInitialSkillValue(name, newValue)
+        adventurer.setInitialSkillValue(name, newValue);
     }
     if (currentValue == 6 && newValue == 5) {
         generatorStore.creator.sixPointsLeft += 1;
         generatorStore.creator.fivePointsLeft -= 1;
-        adventurer.setInitialSkillValue(name, newValue)
+        adventurer.setInitialSkillValue(name, newValue);
     }
-}
+};
 
 watch(
     () => ({
         fivePointsLeft: generatorStore.creator.fivePointsLeft,
-        sixPointsLeft: generatorStore.creator.sixPointsLeft
+        sixPointsLeft: generatorStore.creator.sixPointsLeft,
     }),
     (newValue) => {
         if (adventurer.profession) {
-            adventurer.setSkillsBasedOnProfession(adventurer.profession)
+            adventurer.setSkillsBasedOnProfession(adventurer.profession);
         }
         if (newValue.fivePointsLeft == 0 && newValue.sixPointsLeft == 0) {
             for (const skill of adventurer.initialSkills) {
@@ -104,8 +112,8 @@ watch(
             }
             generatorStore.creator.step1Completed = false;
         }
-    }
-)
+    },
+);
 </script>
 
 <style lang="scss" scoped>
@@ -118,16 +126,22 @@ watch(
     display: flex;
     gap: 1rem;
     align-items: flex-end;
+    padding-inline: 0.4rem;
+
+    &:hover {
+        background: var(--hoverBg);
+    }
 
     .name {
         width: 8rem;
         text-transform: capitalize;
+        align-self: center;
     }
 
     .selector {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        column-gap: .5rem;
+        column-gap: 0.5rem;
 
         button {
             height: 1rem;
@@ -137,7 +151,6 @@ watch(
             &.checked {
                 background: red;
             }
-
         }
     }
 }

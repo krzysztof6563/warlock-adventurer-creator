@@ -1,0 +1,22 @@
+[
+  { "key": "fesselburg", "description": "fesselburg_desc" },
+  { "key": "selbek_village", "description": "selbek_village_desc" },
+  { "key": "helmsby", "description": "helmsby_desc" },
+  { "key": "gloomy_biskerstaf", "description": "gloomy_biskerstaf_desc" },
+  { "key": "bright_marenesse", "description": "bright_marenesse_desc" },
+  { "key": "storm_coast", "description": "storm_coast_desc" },
+  { "key": "burned_village", "description": "burned_village_desc" },
+  { "key": "honheim_ruins", "description": "honheim_ruins_desc" },
+  { "key": "gossenham_lake", "description": "gossenham_lake_desc" },
+  { "key": "pomperburg", "description": "pomperburg_desc" },
+  { "key": "farm_in_unknown_lands", "description": "farm_in_unknown_lands_desc" },
+  { "key": "carved_stone_rebeck", "description": "carved_stone_rebeck_desc" },
+  { "key": "tresselback_trade_city", "description": "tresselback_trade_city_desc" },
+  { "key": "vessen_river", "description": "vessen_river_desc" },
+  { "key": "gronniz_village", "description": "gronniz_village_desc" },
+  { "key": "westerboss", "description": "westerboss_desc" },
+  { "key": "westerlan", "description": "westerlan_desc" },
+  { "key": "offenhest_town", "description": "offenhest_town_desc" },
+  { "key": "some_city_streets", "description": "some_city_streets_desc" },
+  { "key": "barely_remember", "description": "barely_remember_desc" }
+]

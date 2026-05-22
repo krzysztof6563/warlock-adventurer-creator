@@ -1,0 +1,12 @@
+{
+  "key": "height",
+  "dice": { "count": 2, "sides": 6 },
+  "entries": [
+    { "min": 2, "max": 2, "value": "tiny" },
+    { "min": 3, "max": 3, "value": "short" },
+    { "min": 4, "max": 6, "value": "average" },
+    { "min": 7, "max": 9, "value": "tall" },
+    { "min": 10, "max": 11, "value": "very_tall" },
+    { "min": 12, "max": 12, "value": "giant" }
+  ]
+}

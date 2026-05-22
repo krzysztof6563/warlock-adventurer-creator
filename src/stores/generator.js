@@ -1,21 +1,55 @@
-import { ref, computed } from 'vue'
-import { defineStore } from 'pinia'
+import { ref, computed } from "vue";
+import { defineStore } from "pinia";
 
-export const useGeneratorStore = defineStore('generator', {
-  state: () => (
-    {
-      skills: [],
-      societies: [],
-      professions: [],
-      creator: {
-        sixPointsLeft: 10,
-        fivePointsLeft: 10,
-        stamina: null,
-        luck: null,
-        courage: null,
-        step1Completed: false
-      },
-      adventurer: {}
-    }
-  ),
-})
+export const useGeneratorStore = defineStore("generator", {
+    state: () => ({
+        skills: [],
+        societies: [],
+        professions: [],
+        talents: [],
+        looksTables: {},
+        misfortune: [],
+        keepsake: [],
+        whereFrom: [],
+        travelReason: [],
+        howWeMet: [],
+        darkSecret: [],
+        farewell: [],
+        whoYouKnow: [],
+        passions: [],
+        creator: {
+            sixPointsLeft: 10,
+            fivePointsLeft: 10,
+            stamina: null,
+            luck: null,
+            courage: null,
+            step1Completed: false,
+            step4: {
+                talents: [null, null],
+                height: null,
+                hairColor: null,
+                bodyBuild: null,
+                hairType: null,
+                skin: null,
+                hairstyle: null,
+                facialHair: null,
+                misfortune: null,
+                keepsake: null,
+                whereFrom: null,
+                travelReasonOptions: [],
+                travelReason: null,
+                howWeMetOptions: [],
+                howWeMet: null,
+                darkSecretOptions: [],
+                darkSecret: null,
+                farewell: null,
+                whoYouKnow: null,
+                passionPositive: null,
+                passionNegative: null,
+            },
+        },
+        adventurer: {
+            name: "",
+        },
+    }),
+});

@@ -1,0 +1,12 @@
+{
+  "key": "body_build",
+  "dice": { "count": 2, "sides": 6 },
+  "entries": [
+    { "min": 2, "max": 2, "value": "bony" },
+    { "min": 3, "max": 3, "value": "skinny" },
+    { "min": 4, "max": 6, "value": "slim" },
+    { "min": 7, "max": 9, "value": "medium" },
+    { "min": 10, "max": 11, "value": "stocky" },
+    { "min": 12, "max": 12, "value": "massive" }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "positive": [
+    { "key": "desire", "description": "desire_desc" },
+    { "key": "loyalty", "description": "loyalty_desc" },
+    { "key": "love", "description": "love_desc" },
+    { "key": "care", "description": "care_desc" },
+    { "key": "respect", "description": "respect_desc" },
+    { "key": "devotion", "description": "devotion_desc" }
+  ],
+  "negative": [
+    { "key": "addiction", "description": "addiction_desc" },
+    { "key": "addiction", "description": "addiction_desc" },
+    { "key": "hatred", "description": "hatred_desc" },
+    { "key": "hatred", "description": "hatred_desc" },
+    { "key": "phobia", "description": "phobia_desc" },
+    { "key": "phobia", "description": "phobia_desc" }
+  ]
+}

@@ -1,0 +1,14 @@
+[
+  { "key": "money", "description": "money_desc" },
+  { "key": "glory", "description": "glory_desc" },
+  { "key": "escape", "description": "escape_desc" },
+  { "key": "revenge", "description": "revenge_desc" },
+  { "key": "boredom", "description": "boredom_desc" },
+  { "key": "exile", "description": "exile_desc" },
+  { "key": "routine", "description": "routine_desc" },
+  { "key": "talent", "description": "talent_desc" },
+  { "key": "destiny", "description": "destiny_desc" },
+  { "key": "anger", "description": "anger_desc" },
+  { "key": "calling", "description": "calling_desc" },
+  { "key": "guilt", "description": "guilt_desc" }
+]

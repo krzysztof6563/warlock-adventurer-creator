@@ -19,6 +19,10 @@
     --vt-c-text-light-2: rgba(60, 60, 60, 0.66);
     --vt-c-text-dark-1: var(--vt-c-white);
     --vt-c-text-dark-2: rgba(235, 235, 235, 0.64);
+
+    --nonSelectBg: rgb(255 255 255 / 0.05);
+    --selectBg: rgb(255 255 255 / 0.15);
+    --hoverBg: rgb(255 255 255 / 0.1);
 }
 
 /* semantic color variables for this project */
@@ -111,17 +115,11 @@ a,
         display: flex;
         place-items: center;
     }
-
-    #app {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        padding: 0 2rem;
-    }
 }
 
 .grid-2x {
     display: grid;
-    gap: 2rem;
+    gap: 1.25rem;
     grid-template-columns: 1fr;
 
     @media screen and (min-width: 768px) {
@@ -155,4 +153,18 @@ a,
 b,
 strong {
     font-weight: bold;
+}
+
+.flex-between {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+button {
+    cursor: pointer;
+}
+
+h2 {
+    margin-bottom: 1rem;
 }
