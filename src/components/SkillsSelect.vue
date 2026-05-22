@@ -156,16 +156,31 @@ const rollSkills = () => {
 </script>
 
 <style lang="scss" scoped>
+.flex-between {
+    flex-wrap: wrap;
+
+    @media screen and (min-width: 768px) {
+        flex-wrap: nowrap;
+    }
+}
 .skills-wrap {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
+
+    @media screen and (min-width: 768px) {
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
 .skill {
     display: flex;
-    gap: 1rem;
+    gap: 2rem;
     align-items: flex-end;
     padding-inline: 0.4rem;
+
+    @media screen and (min-width: 768px) {
+        gap: 1rem;
+    }
 
     &:hover {
         background: var(--hoverBg);
@@ -180,12 +195,22 @@ const rollSkills = () => {
     .selector {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        column-gap: 0.5rem;
+        column-gap: 1rem;
+        text-align: center;
+
+        @media screen and (min-width: 768px) {
+            column-gap: 0.5rem;
+        }
 
         button {
-            height: 1rem;
-            width: 1rem;
+            --size: 1.25rem;
+            height: var(--size);
+            width: var(--size);
             cursor: pointer;
+
+            @media screen and (min-width: 768px) {
+                --size: 1rem;
+            }
 
             &.checked {
                 background: #313131;

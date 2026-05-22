@@ -7,7 +7,7 @@
             </button>
         </div>
         <div class="grid-2x">
-            <div class="form-input" style="grid-column: span 2">
+            <div class="form-input span-2-lg">
                 <label for="" class="form-label">{{ $t("adventurer.name") }}</label>
                 <div style="display: flex; gap: 0.5rem">
                     <input class="form-input" type="text" v-model="adventurer.name" />

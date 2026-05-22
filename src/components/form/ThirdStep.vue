@@ -7,10 +7,8 @@
             </button>
         </div>
         <div class="grid-2x">
-            <div v-if="rolledProfessions.length == 0" style="grid-column: span 2">
-                Kliknij przycisk, aby wylosować profesje.
-            </div>
-            <div v-else style="grid-column: span 2">Wybierz profesje</div>
+            <div v-if="rolledProfessions.length == 0" class="span-2-lg">Kliknij przycisk, aby wylosować profesje.</div>
+            <div v-else class="span-2-lg">Wybierz profesje</div>
             <div
                 class="profession capitalize"
                 :class="{ selected: generatorStore.adventurer.profession?.name == profession.name }"
