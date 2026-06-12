@@ -309,12 +309,12 @@
 </template>
 
 <script setup>
-import { useGeneratorStore } from "@/stores/generator";
+import { useWalockGeneratorStore } from "@/stores/warlock-generator";
 import { roll, rollTable, rollRangeTable } from "@/core/roll";
 import { computed } from "vue";
 import { useI18n } from "vue-i18n";
 
-const generatorStore = useGeneratorStore();
+const generatorStore = useWalockGeneratorStore();
 const { t } = useI18n();
 const step4 = generatorStore.adventurer;
 

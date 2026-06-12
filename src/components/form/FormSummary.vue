@@ -155,12 +155,12 @@
 </template>
 
 <script setup>
-import { useGeneratorStore } from "@/stores/generator";
+import { useWalockGeneratorStore } from "@/stores/warlock-generator";
 import { sortedSkills as sortSkills } from "@/core/helpers";
 import { computed } from "vue";
 import { useI18n } from "vue-i18n";
 
-const generatorStore = useGeneratorStore();
+const generatorStore = useWalockGeneratorStore();
 const adventurer = generatorStore.adventurer;
 const step4 = generatorStore.adventurer;
 const { t } = useI18n();

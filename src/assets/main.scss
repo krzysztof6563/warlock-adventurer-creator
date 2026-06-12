@@ -123,6 +123,21 @@ a,
     }
 }
 
+.btn {
+    background: #ccc;
+    border: 1px solid #999;
+    color: #434321;
+    padding: 0.5rem 1rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+
+    &:hover {
+        background: hsl(0, 0%, 40%);
+        border: 1px solid hsl(0, 0%, 20%);
+        color: hsl(60, 34%, 60%);
+    }
+}
+
 .grid-2x {
     display: grid;
     gap: 1.25rem;
@@ -180,4 +195,8 @@ button {
 
 h2 {
     margin-bottom: 1rem;
+}
+
+main {
+    padding-block: 2rem;
 }

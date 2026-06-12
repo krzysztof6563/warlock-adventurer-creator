@@ -55,12 +55,12 @@
 </template>
 
 <script setup>
-import { useGeneratorStore } from "@/stores/generator";
+import { useWalockGeneratorStore } from "@/stores/warlock-generator";
 import { roll } from "@/core/roll";
 import { ref, watch } from "vue";
 import { timeoutScrollToBottom } from "@/core/helpers";
 
-const generatorStore = useGeneratorStore();
+const generatorStore = useWalockGeneratorStore();
 const adventurer = generatorStore.adventurer;
 
 const wasRolled = ref(false);
@@ -81,13 +81,7 @@ watch(
         courage: adventurer.courage,
     }),
     (oldValue, newValue) => {
-        if (
-            newValue.name != "" &&
-            newValue.stamina != "" &&
-            newValue.society != "" &&
-            newValue.luck != "" &&
-            newValue.courage != ""
-        ) {
+        if (newValue.stamina != "" && newValue.society != "" && newValue.luck != "" && newValue.courage != "") {
             generatorStore.creator.stepCompleted = Math.max(2, generatorStore.creator.stepCompleted);
             timeoutScrollToBottom();
         }

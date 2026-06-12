@@ -1,7 +1,6 @@
-import { ref, computed } from "vue";
 import { defineStore } from "pinia";
 
-export const useGeneratorStore = defineStore("generator", {
+export const useWalockStorageStore = defineStore("warlockStorage", {
     state: () => ({
         skills: [],
         societies: [],

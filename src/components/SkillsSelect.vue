@@ -52,10 +52,10 @@
 <script setup>
 import { timeoutScrollToBottom } from "@/core/helpers";
 import { getRandomInt } from "@/core/roll";
-import { useGeneratorStore } from "@/stores/generator";
+import { useWalockGeneratorStore } from "@/stores/warlock-generator";
 import { watch } from "vue";
 
-const generatorStore = useGeneratorStore();
+const generatorStore = useWalockGeneratorStore();
 const adventurer = generatorStore.adventurer;
 
 const setSkillValue = (name, newValue) => {
@@ -213,7 +213,8 @@ const rollSkills = () => {
             }
 
             &.checked {
-                background: #313131;
+                background: hsl(60, 34%, 60%);
+                border-color: #313131;
             }
         }
     }
