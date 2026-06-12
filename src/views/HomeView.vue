@@ -45,6 +45,11 @@ h1 {
 
 .saved-section {
     width: 100%;
+
+    h2,
+    .empty-state {
+        text-align: center;
+    }
 }
 
 .saved-grid {
