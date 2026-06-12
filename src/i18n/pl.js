@@ -1,4 +1,13 @@
 export default {
+    home_view: {
+        greeting: "Witaj w generatorze postaci do systemu Warlock!",
+        saved_characters: "Zapisane postacie",
+        no_saved_characters: "Brak zapisanych postaci.",
+    },
+    new_character: "Nowa postać",
+    save_character: "Zapisz postać",
+    character_saved: "Postać została zapisana.",
+    delete_character: "Usuń postać",
     name: "imię",
     profession_label: "profesja",
     choose: "wybierz",
@@ -139,8 +148,7 @@ export default {
             },
             rubber_body: {
                 key: "Gumowe ciało",
-                description:
-                    "Potrafisz wyginać kończyny w niezwykły sposób i przeciskać się przez szczeliny.",
+                description: "Potrafisz wyginać kończyny w niezwykły sposób i przeciskać się przez szczeliny.",
             },
             killer_instinct: {
                 key: "Instynkt zabójcy",
@@ -217,13 +225,11 @@ export default {
             },
             iron_stomach: {
                 key: "Stalowy żołądek",
-                description:
-                    "Potrafisz zjeść wszystko i trucizna niewiele ci robi. Możesz zjeść zgniły pokarm.",
+                description: "Potrafisz zjeść wszystko i trucizna niewiele ci robi. Możesz zjeść zgniły pokarm.",
             },
             quick_feet: {
                 key: "Szybkie stopy",
-                description:
-                    "W walce możesz ruszyć się o jeden zasięg i nadal wykonać akcję (bez sprintu).",
+                description: "W walce możesz ruszyć się o jeden zasięg i nadal wykonać akcję (bez sprintu).",
             },
             armor_training: {
                 key: "Trening pancerza",
@@ -258,8 +264,7 @@ export default {
             },
             evil_eye: {
                 key: "Złe oko",
-                description:
-                    "Potrafisz zesłać klątwę spojrzeniem. Rzuć sesję na k6 i poświęć punkt Szczęścia.",
+                description: "Potrafisz zesłać klątwę spojrzeniem. Rzuć sesję na k6 i poświęć punkt Szczęścia.",
             },
         },
         looks: {
@@ -806,11 +811,11 @@ export default {
         },
     },
     adventurer: {
-        name: "imię",
-        stamina: "wytrzymałość",
-        luck: "szczęście",
-        courage: "odwaga",
-        society: "społeczność",
+        name: "Imię",
+        stamina: "Wytrzymałość",
+        luck: "Szczęście",
+        courage: "Odwaga",
+        society: "Społeczność",
     },
     skillselect: {
         six_points_left: "Pozostała ilość 6 punktów do rozdania: {number}",

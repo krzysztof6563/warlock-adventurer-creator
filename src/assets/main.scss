@@ -38,6 +38,7 @@
     --color-text: var(--vt-c-text-light-1);
 
     --section-gap: 160px;
+    --mainRadius: 0.5rem;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -130,6 +131,7 @@ a,
     padding: 0.5rem 1rem;
     font-weight: 700;
     letter-spacing: 1px;
+    border-radius: var(--mainRadius);
 
     &:hover {
         background: hsl(0, 0%, 40%);
@@ -170,7 +172,7 @@ a,
 .card {
     padding: 1rem;
     border: 1px solid gray;
-    border-radius: 8px;
+    border-radius: var(--mainRadius);
 }
 
 .capitalize::first-letter {
@@ -199,4 +201,6 @@ h2 {
 
 main {
     padding-block: 2rem;
+    min-height: 80vh;
+    height: auto;
 }

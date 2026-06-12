@@ -1,4 +1,16 @@
 export default {
+    home_view: {
+        greeting: "Welcome to the Warlock character generator!",
+        saved_characters: "Saved characters",
+        no_saved_characters: "No saved characters yet.",
+    },
+    new_character: "New character",
+    save_character: "Save character",
+    character_saved: "Character saved.",
+    delete_character: "Delete character",
+    name: "name",
+    profession_label: "profession",
+    choose: "choose",
     form: {
         step4: {
             title: "Step 4",
