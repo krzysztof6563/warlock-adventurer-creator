@@ -7,10 +7,16 @@ const sortedSkills = (skills, t) => {
     });
 };
 
-const timeoutScrollToBottom = () => {
+const timeoutScrollToElement = (selector) => {
     setTimeout(() => {
-        window.scrollTo({ top: document.body.clientHeight, behavior: "smooth" });
+        const element = document.querySelector(selector);
+
+        if (!element) {
+            return;
+        }
+
+        element.scrollIntoView({ behavior: "smooth", block: "start" });
     }, 100);
 };
 
-export { sortedSkills, timeoutScrollToBottom };
+export { sortedSkills, timeoutScrollToElement };

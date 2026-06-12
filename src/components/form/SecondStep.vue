@@ -58,7 +58,7 @@
 import { useWalockGeneratorStore } from "@/stores/warlock-generator";
 import { roll } from "@/core/roll";
 import { ref, watch } from "vue";
-import { timeoutScrollToBottom } from "@/core/helpers";
+import { timeoutScrollToElement } from "@/core/helpers";
 
 const generatorStore = useWalockGeneratorStore();
 const adventurer = generatorStore.adventurer;
@@ -80,10 +80,16 @@ watch(
         luck: adventurer.luck,
         courage: adventurer.courage,
     }),
-    (oldValue, newValue) => {
-        if (newValue.stamina != "" && newValue.society != "" && newValue.luck != "" && newValue.courage != "") {
+    (newValue, oldValue) => {
+        const isComplete = newValue.stamina != "" && newValue.society != "" && newValue.luck != "" && newValue.courage != "";
+        const wasComplete = oldValue?.stamina != "" && oldValue?.society != "" && oldValue?.luck != "" && oldValue?.courage != "";
+
+        if (isComplete) {
             generatorStore.creator.stepCompleted = Math.max(2, generatorStore.creator.stepCompleted);
-            timeoutScrollToBottom();
+        }
+
+        if (isComplete && !wasComplete) {
+            timeoutScrollToElement("#third-step");
         }
     },
 );

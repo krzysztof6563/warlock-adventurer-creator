@@ -25,6 +25,7 @@
 </template>
 
 <script setup>
+import { timeoutScrollToElement } from "@/core/helpers";
 import { rollTable } from "@/core/roll";
 import { useWalockGeneratorStore } from "@/stores/warlock-generator";
 import { ref } from "vue";
@@ -56,6 +57,7 @@ const professionSkillsString = (profession) => {
 const selectProfession = (profession) => {
     generatorStore.adventurer.setSkillsBasedOnProfession(profession);
     generatorStore.creator.stepCompleted = Math.max(3, generatorStore.creator.stepCompleted);
+    timeoutScrollToElement("#fourth-step");
 };
 </script>
 

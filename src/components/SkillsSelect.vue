@@ -50,7 +50,7 @@
 </template>
 
 <script setup>
-import { timeoutScrollToBottom } from "@/core/helpers";
+import { timeoutScrollToElement } from "@/core/helpers";
 import { getRandomInt } from "@/core/roll";
 import { useWalockGeneratorStore } from "@/stores/warlock-generator";
 import { watch } from "vue";
@@ -151,7 +151,7 @@ const rollSkills = () => {
         }
     }
 
-    timeoutScrollToBottom();
+    timeoutScrollToElement("#second-step");
 };
 </script>
 
