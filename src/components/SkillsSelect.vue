@@ -214,7 +214,7 @@ const rollSkills = () => {
 
             &.checked {
                 background: hsl(60, 34%, 60%);
-                border-color: #313131;
+                border-color: hsl(60, 34%, 60%);
             }
         }
     }

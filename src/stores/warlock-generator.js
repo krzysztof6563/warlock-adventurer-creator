@@ -3,6 +3,7 @@ import { defineStore } from "pinia";
 export const useWalockGeneratorStore = defineStore("warlockGenerator", {
     state: () => ({
         skills: [],
+        names: [],
         societies: [],
         professions: [],
         talents: [],

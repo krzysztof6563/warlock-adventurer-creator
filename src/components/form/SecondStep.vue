@@ -10,6 +10,7 @@
             <div class="form-input span-2-lg">
                 <label for="" class="form-label">{{ $t("adventurer.name") }}</label>
                 <div style="display: flex; gap: 0.5rem">
+                    <span style="cursor: pointer" @click="rollName">🎲</span>
                     <input class="form-input" type="text" v-model="adventurer.name" />
                 </div>
             </div>
@@ -56,7 +57,7 @@
 
 <script setup>
 import { useWalockGeneratorStore } from "@/stores/warlock-generator";
-import { roll } from "@/core/roll";
+import { roll, rollTable } from "@/core/roll";
 import { ref, watch } from "vue";
 import { timeoutScrollToElement } from "@/core/helpers";
 
@@ -65,7 +66,12 @@ const adventurer = generatorStore.adventurer;
 
 const wasRolled = ref(false);
 
+const rollName = () => {
+    adventurer.name = rollTable(1, generatorStore.names.length, generatorStore.names)?.[0] ?? "";
+};
+
 const rollAll = () => {
+    rollName();
     adventurer.stamina = roll("2k6+12");
     adventurer.luck = roll("1k6+7");
     adventurer.society = generatorStore.societies[roll("1k4") - 1];

@@ -34,6 +34,7 @@ import { useWalockGeneratorStore } from "@/stores/warlock-generator";
 import { useWalockStorageStore } from "@/stores/warlock-storage";
 import { ref, watch } from "vue";
 import skills from "@/data/warlock/skills.json";
+import names from "@/data/warlock/names.json";
 import societies from "@/data/warlock/societies.json";
 import professions from "@/data/warlock/professions.json";
 import talents from "@/data/warlock/talents.json";
@@ -66,6 +67,7 @@ storageStore.init();
 
 const initGenerator = () => {
     generatorStore.skills = ref(skills);
+    generatorStore.names = ref(names);
     generatorStore.societies = ref(societies);
     generatorStore.professions = ref(professions);
     generatorStore.talents = talents;

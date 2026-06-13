@@ -11,12 +11,16 @@
             <div v-else class="span-2-lg">Wybierz profesje</div>
             <div
                 class="profession capitalize"
-                :class="{ selected: generatorStore.adventurer.profession?.name == profession.name }"
+                :class="{
+                    selected: generatorStore.adventurer.profession?.name == profession.name,
+                    disabled: !isProfessionAvailable(profession),
+                }"
                 v-for="profession in rolledProfessions"
+                :key="profession.name"
                 @click="selectProfession(profession)"
             >
                 <div>
-                    <b>{{ $t(`profession.${profession.name}`) }}</b>
+                    <b>{{ $t(`profession.${profession.name}`) }}{{ professionRestriction(profession) }}</b>
                 </div>
                 <div v-html="professionSkillsString(profession)"></div>
             </div>
@@ -37,6 +41,12 @@ const { t } = useI18n();
 const wasRolled = ref(false);
 let rolledProfessions = ref([]);
 
+const restrictionToSociety = {
+    E: "elf",
+    N: "halfling",
+    K: "dwarf",
+};
+
 const rollProfessions = () => {
     rolledProfessions.value = rollTable(6, 6, generatorStore.professions);
     wasRolled.value = true;
@@ -54,7 +64,20 @@ const professionSkillsString = (profession) => {
     return strings.join("<br>");
 };
 
+const professionRestriction = (profession) => (profession.restriction ? ` (${profession.restriction})` : "");
+const isProfessionAvailable = (profession) => {
+    if (!profession.restriction) {
+        return true;
+    }
+
+    return generatorStore.adventurer.society === restrictionToSociety[profession.restriction];
+};
+
 const selectProfession = (profession) => {
+    if (!isProfessionAvailable(profession)) {
+        return;
+    }
+
     generatorStore.adventurer.setSkillsBasedOnProfession(profession);
     generatorStore.creator.stepCompleted = Math.max(3, generatorStore.creator.stepCompleted);
     timeoutScrollToElement("#fourth-step");
@@ -69,6 +92,11 @@ const selectProfession = (profession) => {
 
     &.selected {
         background: var(--selectBg);
+    }
+
+    &.disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
     }
 }
 </style>
