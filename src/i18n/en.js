@@ -139,26 +139,106 @@ export default {
             }
         },
         misfortune: {
-            death_hunts_you: "Death Hunts You",
-            your_siblings_are_trouble: "Your Siblings Are Trouble",
-            under_a_dark_star: "Under a Dark Star",
-            romantic_rival: "Romantic Rival",
-            grave_mistake: "Mistake",
-            bitter_revenge: "Bitter Revenge",
-            trauma: "Trauma",
-            rotten_heart: "Rotten Heart",
-            great_joke: "Great Joke",
-            resemblance: "Resemblance",
-            unlucky_tattoo: "Unlucky Tattoo",
-            bloodshot_eyes: "Bloodshot Eyes",
-            idealist: "Idealist",
-            lost_love: "Lost Love",
-            birthmark: "Birthmark",
-            fire_fascination: "Fire Fascination",
-            bad_leg: "Bad Leg",
-            eternal_smile: "Eternal Smile",
-            gift_of_tongue: "Gift of Tongue",
-            grim_destiny: "Grim Destiny"
+            death_hunts_you: {
+                key: "Death Hunts You",
+                description:
+                    "You are convinced that death itself is following you. You are restless and cannot stay in one place for long. Even if you currently live in a city, you regularly change where you stay so that this “thing” does not catch you."
+            },
+            your_siblings_are_trouble: {
+                key: "Your Siblings Are Trouble",
+                description:
+                    "Your brother or sister is a nightmare. They appear at the worst possible moment, cost you money, and cause problems. Tell the Game Master which sibling causes trouble and who they are. Expect the worst, your family will be your downfall."
+            },
+            under_a_dark_star: {
+                key: "Under a Dark Star",
+                description:
+                    "Something has been wrong with you since birth, and when the right moment comes, you will bring about your own ruin. The Game Master will remind you of this when the time is right and when you think everything is going well..."
+            },
+            romantic_rival: {
+                key: "Romantic Rival",
+                description:
+                    "You once had a lover and a rival who fought for your heart. The lover is long gone, but the rival remains and is a constant burden to you. Describe who they are."
+            },
+            grave_mistake: {
+                key: "Mistake",
+                description:
+                    "In your youth, you made a mistake, a very serious mistake, and it will soon return with force. Tell the Game Master what you did."
+            },
+            bitter_revenge: {
+                key: "Bitter Revenge",
+                description:
+                    "You were wronged unjustly, and that wrong still weighs on you. Tell the Game Master what happened to you and plan your cruel revenge."
+            },
+            trauma: {
+                key: "Trauma",
+                description:
+                    "As a child, you saw something truly horrible, and now whenever something similar happens, those terrible memories return. Tell the Game Master what you saw, and they will say what can trigger those memories."
+            },
+            rotten_heart: {
+                key: "Rotten Heart",
+                description:
+                    "Your heart is spoiled, and your relationships always end badly for the other person. Sooner or later, people see through you and turn against you."
+            },
+            great_joke: {
+                key: "Great Joke",
+                description:
+                    "The gods think you are amusing. Once per session, the whole universe turns against you and something catastrophic happens. The gods laugh, but you do not."
+            },
+            resemblance: {
+                key: "Resemblance",
+                description:
+                    "You look like someone well known in the realm. Describe who you resemble. At the worst moments, people may be convinced that you are that person."
+            },
+            unlucky_tattoo: {
+                key: "Unlucky Tattoo",
+                description:
+                    "You once kept bad company, and a tattoo remains from that time. Now you must hide it, because it could land you in trouble. Describe what the tattoo looks like and what it means."
+            },
+            bloodshot_eyes: {
+                key: "Bloodshot Eyes",
+                description:
+                    "Because of your eye problems, you always look drunk. For that reason, even when you are completely sober, people sometimes have trouble taking you seriously."
+            },
+            idealist: {
+                key: "Idealist",
+                description:
+                    "You absolutely believe in something many people would not even consider. Your views shaped your life, and that ideology often gets in the way of doing certain things. Describe what you believe, and the Game Master will use it in adventures and put you to the test."
+            },
+            lost_love: {
+                key: "Lost Love",
+                description:
+                    "The love of your life rejected you, and now the whole world seems gray and bleak. You often tell others about your broken heart and dampen their mood. You also do not rejoice in your own successes or celebrate them."
+            },
+            birthmark: {
+                key: "Birthmark",
+                description:
+                    "You were born with a mark in a fairly visible place, though not on your face. Unfortunately, it resembles something people fear: a sign of dark magic, an infection, or a mark like the one borne by the Bandit King."
+            },
+            fire_fascination: {
+                key: "Fire Fascination",
+                description:
+                    "You cannot take your eyes off fire, whether it is a campfire or a burning house. You do not deliberately start fires, but it is strange how accidents always happen when you are nearby..."
+            },
+            bad_leg: {
+                key: "Bad Leg",
+                description:
+                    "You have limped on one leg since birth. It usually causes no problems, but it has a habit of acting up exactly when you need to run."
+            },
+            eternal_smile: {
+                key: "Eternal Smile",
+                description:
+                    "You were born with a face that always seems to be smiling and happy. That has its advantages, but when someone nearby is in a bad mood or furious, you are always the first to catch the blame."
+            },
+            gift_of_tongue: {
+                key: "Gift of Tongue",
+                description:
+                    "You talk too much. Perhaps you use it to hide stress, hate silence, or simply like the sound of your own voice. The Game Master will remember this, and eventually you will say something at exactly the wrong moment."
+            },
+            grim_destiny: {
+                key: "Grim Destiny",
+                description:
+                    "You have a feeling that something great and very bad will happen in your life. Or perhaps to someone close to you. The Game Master will remember this, and soon you will learn your destiny."
+            }
         },
         keepsake: {
             miniature_family_portrait: {

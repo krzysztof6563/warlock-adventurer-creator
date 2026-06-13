@@ -91,14 +91,19 @@
             <table class="details-table">
                 <tr>
                     <td>{{ $t("form.step4.misfortune") }}</td>
-                    <td>{{ valueText("warlock.misfortune", character.misfortune) }}</td>
+                    <td>
+                        <div>{{ keyedText("warlock.misfortune", character.misfortune) }}</div>
+                        <div v-if="character.misfortune" class="description">
+                            {{ $t(`warlock.misfortune.${character.misfortune}.description`, "") }}
+                        </div>
+                    </td>
                 </tr>
                 <tr>
                     <td>{{ $t("form.step4.keepsake") }}</td>
                     <td>
                         <div>{{ keyedText("warlock.keepsake", character.keepsake) }}</div>
                         <div v-if="character.keepsake" class="description">
-                            {{ describedText("warlock.keepsake", character.keepsake) }}
+                            {{ $t(`warlock.keepsake.${character.keepsake}.description`, "") }}
                         </div>
                     </td>
                 </tr>
@@ -107,7 +112,7 @@
                     <td>
                         <div>{{ keyedText("warlock.where_from", character.whereFrom) }}</div>
                         <div v-if="character.whereFrom" class="description">
-                            {{ describedText("warlock.where_from", character.whereFrom) }}
+                            {{ $t(`warlock.where_from.${character.whereFrom}.description`, "") }}
                         </div>
                     </td>
                 </tr>
@@ -116,7 +121,7 @@
                     <td>
                         <div>{{ keyedText("warlock.travel_reason", character.travelReason) }}</div>
                         <div v-if="character.travelReason" class="description">
-                            {{ describedText("warlock.travel_reason", character.travelReason) }}
+                            {{ $t(`warlock.travel_reason.${character.travelReason}.description`, "") }}
                         </div>
                     </td>
                 </tr>
@@ -125,7 +130,7 @@
                     <td>
                         <div>{{ keyedText("warlock.how_we_met", character.howWeMet) }}</div>
                         <div v-if="character.howWeMet" class="description">
-                            {{ describedText("warlock.how_we_met", character.howWeMet) }}
+                            {{ $t(`warlock.how_we_met.${character.howWeMet}.description`, "") }}
                         </div>
                     </td>
                 </tr>
@@ -134,7 +139,7 @@
                     <td>
                         <div>{{ keyedText("warlock.dark_secret", character.darkSecret) }}</div>
                         <div v-if="character.darkSecret" class="description">
-                            {{ describedText("warlock.dark_secret", character.darkSecret) }}
+                            {{ $t(`warlock.dark_secret.${character.darkSecret}.description`, "") }}
                         </div>
                     </td>
                 </tr>
@@ -143,7 +148,7 @@
                     <td>
                         <div>{{ keyedText("warlock.farewell", character.farewell) }}</div>
                         <div v-if="character.farewell" class="description">
-                            {{ describedText("warlock.farewell", character.farewell) }}
+                            {{ $t(`warlock.farewell.${character.farewell}.description`, "") }}
                         </div>
                     </td>
                 </tr>
@@ -152,7 +157,7 @@
                     <td>
                         <div>{{ keyedText("warlock.who_you_know", character.whoYouKnow) }}</div>
                         <div v-if="character.whoYouKnow" class="description">
-                            {{ describedText("warlock.who_you_know", character.whoYouKnow) }}
+                            {{ $t(`warlock.who_you_know.${character.whoYouKnow}.description`, "") }}
                         </div>
                     </td>
                 </tr>
@@ -161,10 +166,10 @@
                     <td>
                         <div v-html="passionsText"></div>
                         <div v-if="character.passionPositive" class="description">
-                            {{ describedText("warlock.passions.positive", character.passionPositive) }}
+                            {{ $t(`warlock.passions.positive.${character.passionPositive}.description`, "") }}
                         </div>
                         <div v-if="character.passionNegative" class="description">
-                            {{ describedText("warlock.passions.negative", character.passionNegative) }}
+                            {{ $t(`warlock.passions.negative.${character.passionNegative}.description`, "") }}
                         </div>
                     </td>
                 </tr>
@@ -208,26 +213,12 @@ const emit = defineEmits(["remove"]);
 const { t } = useI18n();
 
 const fallback = () => t("form.step4.not_set");
-const talentLabel = (key) => {
-    if (!key) return fallback();
-    const richPath = `warlock.talents.${key}.key`;
-    const richValue = t(richPath);
-    return richValue === richPath ? t(`warlock.talents.${key}`) : richValue;
-};
-const talentDescription = (key) => {
-    if (!key) return null;
-    const path = `warlock.talents.${key}.description`;
-    const value = t(path);
-    return value === path ? null : value;
-};
-const lookText = (group, key) => (key ? t(`warlock.looks.${group}.${key}`) : fallback());
-const valueText = (group, key) => (key ? t(`${group}.${key}`) : fallback());
-const keyedText = (group, key) => (key ? t(`${group}.${key}.key`) : fallback());
-const describedText = (group, key) => {
-    if (!key) return null;
-    const value = t(`${group}.${key}.description`);
-    return value === `${group}.${key}.description` ? null : value;
-};
+const tr = (path, fallbackText = fallback()) => t(path, fallbackText);
+const trDesc = (path) => t(path, "");
+const talentLabel = (key) => (key ? tr(`warlock.talents.${key}.key`, t(`warlock.talents.${key}`)) : fallback());
+const talentDescription = (key) => (key ? trDesc(`warlock.talents.${key}.description`) : "");
+const lookText = (group, key) => (key ? tr(`warlock.looks.${group}.${key}`) : fallback());
+const keyedText = (group, key) => (key ? tr(`${group}.${key}.key`) : fallback());
 
 const passionsText = computed(() => {
     const positive = props.character.passionPositive
@@ -323,7 +314,7 @@ const sortedCharacterSkills = computed(() => sortSkills(props.character.skills |
 
     td {
         // display: inline-flex;
-        padding: 0.05rem;
+        padding: 0.1rem 0.3rem;
         vertical-align: top;
         &:first-child {
             font-weight: 700;
@@ -367,6 +358,7 @@ const sortedCharacterSkills = computed(() => sortSkills(props.character.skills |
 
 .description {
     font-size: 0.9em;
-    opacity: 0.9;
+    // opacity: 0.9;
+    font-style: italic;
 }
 </style>

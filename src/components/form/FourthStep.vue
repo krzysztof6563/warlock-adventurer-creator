@@ -133,9 +133,11 @@
                         </button>
                     </div>
                 </div>
-                <div>
-                    {{ step4.misfortune ? t(`warlock.misfortune.${step4.misfortune}`) : t("form.step4.not_set") }}
-                </div>
+                <template v-if="step4.misfortune">
+                    <div>{{ itemKey("misfortune", step4.misfortune) }}</div>
+                    <div class="description">{{ itemDescription("misfortune", step4.misfortune) }}</div>
+                </template>
+                <div v-else>{{ t("form.step4.not_set") }}</div>
             </div>
 
             <div class="panel">

@@ -94,12 +94,12 @@ export default {
             antimagic: {
                 key: "Antymagiczny",
                 description:
-                    "Z jakiegoś powodu magia odbija się od twojego ciała. Zawsze możesz wykonać test inkantacji, by uchronić się przed zaklęciem.",
+                    "Z jakiegoś powodu magia odbija się od twojego ciała. Zawsze możesz wykonać test inkantacji, by uchronić się przed zaklęciem.Jeśli jednak sam rzucasz zaklęcie, każdy nieudany test inkantacji traktowany jest jako utrata kontroli nad zaklęciem.",
             },
             attractiveness: {
                 key: "Atrakcyjność",
                 description:
-                    "Ludzie rumienią się na twój widok. Automatycznie zaliczasz testy targowania lub perswazji, jeśli ofiara jest zauroczona.",
+                    "Ludzie rumienią się na twój widok. Automatycznie zali- czasz testy targowania lub perswazji, jeśli osoba, z któ- rą rozmawiasz, może być tobą zauroczona. Jeśli nie ma pewności, jak postać zareaguje, to Mistrz Gry wykonuje rzut k6 i przy wyniku 4-6 ofiara jest zauroczona.",
             },
             unscarred: {
                 key: "Bez rysów",
@@ -113,7 +113,7 @@ export default {
             businessman: {
                 key: "Biznesmen",
                 description:
-                    "Kłócisz się z handlarzami do upadłego. Zawsze odejmujesz 1 od wyniku rzutu na cenę przedmiotu.",
+                    "Kłócisz się z handlarzami do upadłego. Zawsze odejmujesz 1 od wyniku rzutu na cenę przedmiotu. Jeśli wypadłoby w związku z tym 0, prowadzący rzuca jeszcze raz, lecz na niższy typ monet (złoto → srebro → miedziaki).",
             },
             scar: {
                 key: "Blizna",
@@ -130,7 +130,8 @@ export default {
             },
             keen_hearing: {
                 key: "Czuły słuch",
-                description: "Możesz wsłuchiwać się w szepty i rozmowy za drzwiami, wykonując testy dostrzegania.",
+                description:
+                    "Możesz wsłuchiwać się w dalekie szepty i rozmowy, nawet za drzwiami, wykonując testy dostrzegania.",
             },
             innate_spell: {
                 key: "Wrodzone zaklęcie",
@@ -140,7 +141,7 @@ export default {
             perfect_memory: {
                 key: "Doskonała pamięć",
                 description:
-                    "Zawsze zapamiętujesz wszystko, co widziałeś lub przeczytałeś. Każde nieudane splatanie przy takim czarowaniu skutkuje gniewem zaświatów.",
+                    "Zawsze zapamiętujesz wszystko, co widziałeś lub przeczytałeś. Za wsze zapamiętu jesz wszystko, co widziałeś lub przeczytałeś. Możesz też rzucać zaklęcia z pamięci bez po trzeby posiadania tekstu z zaklęciem, lecz każde nie udane splatanie przy takim czarowaniu skutkuje gniewem zaświatów. Każde nieudane splatanie przy takim czarowaniu skutkuje gniewem zaświatów.",
             },
             thick_skin: {
                 key: "Gruba skóra",
@@ -161,7 +162,7 @@ export default {
             cockroach: {
                 key: "Karaluch",
                 description:
-                    "Zawsze potrafisz uniknąć zagrożenia. W beznadziejnej sytuacji możesz wykonać test Szczęścia i nagle zniknąć.",
+                    "Zawsze potrafisz uniknąć zagrożenia. Podczas walki w beznadziejnej sytuacji możesz wykonać test Szczęścia i nagle zniknąć.",
             },
             cat_eyes: {
                 key: "Kocie oczy",
@@ -178,7 +179,7 @@ export default {
             dark_destiny: {
                 key: "Mroczne przeznaczenie",
                 description:
-                    "Masz dziwny znak na ciele. Raz umrzesz i wrócisz, ale jeśli nie wykonasz polecenia, tracisz na stałe 3 Wytrzymałości.",
+                    "Masz dziwny znak na ciele. Raz umrzesz i wrócisz, ale jeśli nie wykonasz polecenia istoty, która opętała Twoje ciało, tracisz na stałe 3 Wytrzymałości.",
             },
             unkillable: {
                 key: "Nie do zabicia",
@@ -187,7 +188,7 @@ export default {
             ambidexterity: {
                 key: "Oburęczność",
                 description:
-                    "Walisz obiema rękami jednakowo. Przy dwóch broniach możesz zaatakować bez premii +5 do rzutu.",
+                    "Możesz nosić dwie bronie jednocześnie. Jeśli walczysz za pomocą sztyletu w jednej ręce i bronią jednoręczną w drugiej, możesz zaatakować bez premii +5 do rzutu. Jeśli trafisz, rzucasz na obrażenia obu broni i dodajesz je do siebie.",
             },
             paranoia: {
                 key: "Paranoja",
@@ -264,7 +265,8 @@ export default {
             },
             evil_eye: {
                 key: "Złe oko",
-                description: "Potrafisz zesłać klątwę spojrzeniem. Rzuć sesję na k6 i poświęć punkt Szczęścia.",
+                description:
+                    "Od kiedy tylko pamiętasz, potrafisz zesłać na kogoś klą- twę samym swoim wzrokiem. Raz na sesję, jeśli jakiemuś przeciwnikowi powiedzie się prosty lub przeciwstawny test, wykonaj test Szczęścia. Jeśli ci się powiedzie, test przeciwnika będzie nieudany.",
             },
         },
         looks: {
@@ -325,26 +327,106 @@ export default {
             },
         },
         misfortune: {
-            death_hunts_you: "Tropi cię śmierć",
-            your_siblings_are_trouble: "Twoje rodzeństwo to tragedia",
-            under_a_dark_star: "Spod mrocznej gwiazdy",
-            romantic_rival: "Miłosny rywal",
-            grave_mistake: "Błąd",
-            bitter_revenge: "Gorzka zemsta",
-            trauma: "Trauma",
-            rotten_heart: "Zgniłe serce",
-            great_joke: "Wielki żart",
-            resemblance: "Podobieństwo",
-            unlucky_tattoo: "Pechowy tatuaż",
-            bloodshot_eyes: "Zakrwawione oczy",
-            idealist: "Idealista",
-            lost_love: "Utracona miłość",
-            birthmark: "Znamię",
-            fire_fascination: "Fascynacja ogniem",
-            bad_leg: "Pechowa noga",
-            eternal_smile: "Wieczny uśmiech",
-            gift_of_tongue: "Dar języka",
-            grim_destiny: "Ponure przeznaczenie",
+            death_hunts_you: {
+                key: "Tropi cię śmierć",
+                description:
+                    "Jesteś przekonany, że śmierć we własnej osobie za tobą podąża. Jesteś niespokojny i nie potrafisz zostać w jednym miejscu na dłużej. Nawet jeśli aktualnie mieszkasz w mieście, cyklicznie zmieniasz swoje miejsce zamieszkania, by to „coś” cię nie dopadło.",
+            },
+            your_siblings_are_trouble: {
+                key: "Twoje rodzeństwo to tragedia",
+                description:
+                    "Twój brat lub siostra to koszmar. Pojawiają się w najgorszym momencie, pozbywają cię pieniędzy i sprawiają problemy. Opowiedz Mistrzowi Gry, kto z twojego rodzeństwa sprawia kłopoty i kim jest. Oczekuj najgorszego, rodzina będzie twoją zgubą.",
+            },
+            under_a_dark_star: {
+                key: "Spod mrocznej gwiazdy",
+                description:
+                    "Od urodzenia coś jest z tobą nie tak i gdy nadejdzie odpowiednia chwila, sam doprowadzisz do swojej zguby. Mistrz Gry ci o tym przypomni, gdy nadejdzie odpowiedni moment i gdy będziesz sądzić, że idzie ci świetnie...",
+            },
+            romantic_rival: {
+                key: "Miłosny rywal",
+                description:
+                    "Miałeś kiedyś kochanka oraz rywala, który walczył o twoje serce. Kochanka już dawno nie ma, lecz rywal pozostał i jest dla ciebie udręką. Opisz, kim on jest.",
+            },
+            grave_mistake: {
+                key: "Błąd",
+                description:
+                    "Popełniłeś w młodości błąd, bardzo poważny błąd, który wkrótce odbije się ze sporą mocą. Powiedz Mistrzowi Gry, co takiego uczyniłeś.",
+            },
+            bitter_revenge: {
+                key: "Gorzka zemsta",
+                description:
+                    "Zostałeś niesłusznie skrzywdzony i do dzisiaj ta krzywda ciąży na tobie. Powiedz Mistrzowi Gry, co ci się stało i zaplanuj swoją okrutną zemstę.",
+            },
+            trauma: {
+                key: "Trauma",
+                description:
+                    "Będąc dzieckiem, widziałeś coś bardzo okropnego i teraz, gdy wydarzy się coś podobnego, twoje okropne wspomnienia wracają. Powiedz Mistrzowi Gry, co widziałeś, a on powie, co może przywołać twoje wspomnienia.",
+            },
+            rotten_heart: {
+                key: "Zgniłe serce",
+                description:
+                    "Twoje serce jest zepsute, a twoje znajomości zawsze kończą się dla drugiej strony źle. Prędzej czy później ludzie poznają się na tobie i obracają przeciwko tobie.",
+            },
+            great_joke: {
+                key: "Wielki żart",
+                description:
+                    "Bogowie mają z ciebie ubaw. Raz na sesję cały wszechświat obraca się przeciwko tobie i dzieje się coś katastrofalnego. Bogowie się śmieją, lecz ty nie.",
+            },
+            resemblance: {
+                key: "Podobieństwo",
+                description:
+                    "Wyglądasz jak ktoś znany w krainie. Opisz, kogo przypominasz. W najgorszych momentach ludzie mogą być przekonani, że jesteś tą osobą.",
+            },
+            unlucky_tattoo: {
+                key: "Pechowy tatuaż",
+                description:
+                    "Zadawałeś się kiedyś z nieodpowiednimi osobami i pozostał ci po tym tatuaż. Teraz musisz go ukrywać, ponieważ może cię wpakować w kłopoty. Opisz, jaki masz tatuaż i co znaczy.",
+            },
+            bloodshot_eyes: {
+                key: "Zakrwawione oczy",
+                description:
+                    "Przez problemy z oczami wyglądasz cały czas, jakbyś był pijany. Z tego powodu, nawet jeśli jesteś kompletnie trzeźwy, czasem ludzie mają problem z traktowaniem cię serio.",
+            },
+            idealist: {
+                key: "Idealista",
+                description:
+                    "Absolutnie wierzysz w coś, czego wielu ludzi nawet nie bierze pod uwagę. Twoje poglądy ukształtowały twoje życie i często przyjęta ideologia przeszkadza ci w wykonywaniu niektórych rzeczy. Opisz, w co wierzysz, a Mistrz Gry to wykorzysta w przygodach i wystawi cię na próbę.",
+            },
+            lost_love: {
+                key: "Utracona miłość",
+                description:
+                    "Miłość twojego życia cię odtrąciła i cały świat jest teraz dla ciebie szary i ponury. Często opowiadasz innym o swoim złamanym sercu i psujesz im humor. Nie cieszysz się również ze swoich sukcesów i nie świętujesz ich.",
+            },
+            birthmark: {
+                key: "Znamię",
+                description:
+                    "Urodziłeś się ze znamieniem w dosyć widocznym miejscu (lecz nie na twarzy). Niestety przypomina coś, czego ludzie się boją (znak mrocznej magii, zakażenie, znamię podobne do tego, które posiada Król Bandytów).",
+            },
+            fire_fascination: {
+                key: "Fascynacja ogniem",
+                description:
+                    "Nie potrafisz odwrócić oczu od ognia, czy to od obozowego ogniska, czy od płonącego domu. Nie doprowadzasz świadomie do pożarów, ale to dziwne, że zawsze, gdy jesteś blisko, dzieją się wypadki...",
+            },
+            bad_leg: {
+                key: "Pechowa noga",
+                description:
+                    "Od urodzenia kulejesz na jedną nogę. Zazwyczaj nie sprawia problemów... ale lubi się odzywać, gdy akurat musisz uciekać.",
+            },
+            eternal_smile: {
+                key: "Wieczny uśmiech",
+                description:
+                    "Urodziłeś się z twarzą, która wydaje się wiecznie uśmiechnięta i szczęśliwa. Ma to swoje plusy, lecz gdy ktoś w pobliżu nie jest w dobrym humorze lub jest wściekły, to zawsze najpierw obrywa się tobie.",
+            },
+            gift_of_tongue: {
+                key: "Dar języka",
+                description:
+                    "Za dużo mówisz. Próbujesz tym ukryć swój stres, nienawidzisz ciszy lub lubisz swój głos. Mistrz Gry będzie o tym pamiętał i w końcu powiesz coś w niewłaściwym momencie.",
+            },
+            grim_destiny: {
+                key: "Ponure przeznaczenie",
+                description:
+                    "Masz przeczucie, że stanie się w twoim życiu coś wielkiego i bardzo złego. A może stanie się to komuś bliskiemu? Mistrz Gry będzie o tym pamiętać i wkrótce poznasz swoje przeznaczenie.",
+            },
         },
         keepsake: {
             miniature_family_portrait: {
